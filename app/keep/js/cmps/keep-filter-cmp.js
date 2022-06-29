@@ -1,9 +1,9 @@
 export default {
-  props: ["books"],
+  props: ["notes"],
   template: `
-    <section class="filter-books" >
+    <section class="filter-notes" >
     Search:
-	<input type="text" v-model="filterBy.title" @input="filter" placeholder='Enter book name..'>
+	<input type="text" v-model="filterBy.title" @input="filter" placeholder='Enter note name..'>
     Min price:
 	<input type="range" v-model="filterBy.price" @input="filter" :min="minPrice" :max="maxPrice"  v-model.number="filterBy.price">
     {{filterBy.price}}
@@ -27,10 +27,10 @@ export default {
   },
   computed: {
     minPrice() {
-      return Math.min(...this.books.map((book) => book.listPrice.amount))
+      return Math.min(...this.notes.map((note) => note.listPrice.amount))
     },
     maxPrice() {
-      return Math.max(...this.books.map((book) => book.listPrice.amount))
+      return Math.max(...this.notes.map((note) => note.listPrice.amount))
     },
   },
   components: {},
