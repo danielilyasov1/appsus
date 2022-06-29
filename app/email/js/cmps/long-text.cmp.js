@@ -15,7 +15,7 @@ export default {
       return this.isMore ? this.text : this.text.slice(0, 40)
     },
     readText() {
-      return this.isMore ? " Read Less" : " Read more"
+      return this.isMore ? " Read Less" : ""
     },
     
   },

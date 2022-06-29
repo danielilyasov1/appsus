@@ -1,62 +1,62 @@
 import { utilService } from "./util-service.js"
 import { storageService } from "./async-storage-service.js"
 
-const MAILS_KEY = "mails"
-_createMails()
+const MAILS_KEY = "emails"
+_createEmails()
 
-export const mailService = {
+export const emailService = {
   query,
   remove,
   save,
-  getEmptyMail,
+  getEmptyEmail,
   get,
-  getNextMailId,
-  addMail,
+  getNextEmailId,
+  addEmail,
   getLoggedinUser,
 }
 
-function addMail(mail) {
-  return storageService.post(MAILS_KEY, mail)
+function addEmail(email) {
+  return storageService.post(MAILS_KEY, email)
 }
 
 function query() {
   return storageService.query(MAILS_KEY)
 }
 
-function remove(mailId) {
-  return storageService.remove(MAILS_KEY, mailId)
+function remove(emailId) {
+  return storageService.remove(MAILS_KEY, emailId)
 }
 
-function get(mailId) {
-  return storageService.get(MAILS_KEY, mailId)
+function get(emailId) {
+  return storageService.get(MAILS_KEY, emailId)
 }
 
-function save(mail) {
-  if (mail.id) return storageService.put(MAILS_KEY, mail)
-  else return storageService.post(MAILS_KEY, mail)
+function save(email) {
+  if (email.id) return storageService.put(MAILS_KEY, email)
+  else return storageService.post(MAILS_KEY, email)
 }
 
-function getNextMailId(MailId) {
-  return storageService.query(MAILS_KEY).then((Mails) => {
-    const idx = Mails.findIndex((Mail) => Mail.id === MailId)
-    return idx < Mails.length - 1 ? Mails[idx + 1].id : Mails[0].id
+function getNextEmailId(emailId) {
+  return storageService.query(MAILS_KEY).then((emails) => {
+    const idx = emails.findIndex((email) => email.id === emailId)
+    return idx < emails.length - 1 ? emails[idx + 1].id : emails[0].id
   })
 }
 
-function getEmptyMail() {
+function getEmptyEmail() {
   return { id: "", name: "", to: "", subject: "", body: "" }
 }
 function getLoggedinUser() {
   const loggedinUser = {
-    email: 'user@appsus.com',
-    fullname: 'akuna matata'
-   }
+    email: "user@appsus.com",
+    fullname: "akuna matata",
+  }
 }
 
-function _createMails() {
-  let mails = utilService.loadFromStorage(MAILS_KEY)
-  if (!mails || !mails.length) {
-    mails = [
+function _createEmails() {
+  let emails = utilService.loadFromStorage(MAILS_KEY)
+  if (!emails || !emails.length) {
+    emails = [
       {
         id: "e101",
         subject: "hello!",
@@ -85,7 +85,7 @@ function _createMails() {
         name: "momo",
       },
     ]
-    utilService.saveToStorage(MAILS_KEY, mails)
+    utilService.saveToStorage(MAILS_KEY, emails)
   }
-  return mails
+  return emails
 }

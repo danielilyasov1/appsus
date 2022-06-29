@@ -1,17 +1,17 @@
-import mailPreview from "./email-preview.cmp.js"
+import emailPreview from "./email-preview.cmp.js"
 
 export default {
-  props: ["mails"],
+  props: ["emails"],
   template: `
- <section v-if="mails" class="mail-list">
+ <section v-if="emails" class="email-list">
     <ul>
-        <li v-for="(mail,idx) in mails" :key="mail.id" class="mail-preview-container">
-            <router-link :to="'/mail/'+mail.id" class='details'>    
-            <mail-preview :mail="mail"/>
+        <li v-for="(email,idx) in emails" :key="email.id" class="email-preview-container">
+            <router-link :to="'/email/'+email.id" class='details'>    
+            <email-preview :email="email"/>
             <!-- <div class="actions">
-                <button @click="remove(mail.id)">X</button>
-                <router-link :to="'/mail/'+mail.id" class='details'>Details</router-link>
-                <router-link :to="'/mail/edit/'+mail.id">Edit</router-link>
+                <button @click="remove(email.id)">X</button>
+                <router-link :to="'/email/'+email.id" class='details'>Details</router-link>
+                <router-link :to="'/email/edit/'+email.id">Edit</router-link>
               </div> -->
             </router-link>
         </li>
@@ -19,15 +19,15 @@ export default {
   </section>
 `,
   components: {
-    mailPreview,
+    emailPreview,
   },
 
   data() {
     return {}
   },
   methods: {
-    select(mail) {
-      this.$emit("selected", mail)
+    select(email) {
+      this.$emit("selected", email)
     },
   },
   computed: {},

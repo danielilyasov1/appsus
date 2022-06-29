@@ -1,50 +1,48 @@
-import { mailService } from "../services/mail-service.js"
-import mailList from "../cmps/mail-list.cmp.js"
-import mailFilter from "../cmps/mail-filter-cmp.js"
-import mailAdd from "./mail-add.cmp.js"
+import { emailService } from "../services/email-service.js"
+import emailList from "../cmps/email-list.cmp.js"
+// import emailFilter from "../cmps/email-filter-cmp.js"
+import emailAdd from "./email-add.cmp.js"
 // import { eventBus } from "../services/eventBus-service.js"
 
 export default {
   template: `
-   <section class="mail-app">
-    <mail-filter @filtered="filterMail" :mails="mails" v-if="mails"/>
-    <mail-add></mail-add>
+   <section class="email-app">
+    <email-filter @filtered="filterEmail" :emails="emails" v-if="emails"/>
+    <email-add></email-add>
+    <email-list @selected="selectEmail" :emails="emailsToDisplay" />
    </section>
 
 `,
   components: {
-    mailList,
-    mailFilter,
-    mailAdd,
+    emailList,
+    // emailFilter,
+    emailAdd,
   },
   data() {
     return {
-      mails: null,
-      selectedMail: null,
+      emails: null,
+      selectedEmail: null,
       filterBy: null,
     }
   },
   created() {
-    mailService.query().then((mails) => {
-      this.mails = mails
+    emailService.query().then((emails) => {
+      this.emails = emails
     })
   },
   methods: {
-    selectMail(mail) {
-      this.selectedMail = mail
+    selectEmail(email) {
+      this.selectedEmail = email
     },
-    filterMail(filterBy) {
+    filterEmail(filterBy) {
       this.filterBy = filterBy
     },
   },
   computed: {
-    mailsToDisplay() {
-      if (!this.filterBy) return this.mails
+    emailsToDisplay() {
+      if (!this.filterBy) return this.emails
       const regex = new RegExp(this.filterBy.subject, "i")
-      return this.mails.filter(
-        (mail) =>
-          regex.test(mail.subject) 
-      )
+      return this.emails.filter((email) => regex.test(email.subject))
     },
   },
   unmounted() {},

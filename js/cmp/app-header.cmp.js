@@ -8,7 +8,7 @@ export default {
       <ul v-show="!mobile" class="navigation">
         <li><router-link class="link" to="/book">📚Books</router-link></li>
         <li><router-link class="link" to="/keep">📌Keep</router-link></li>
-        <li><router-link class="link" to="/email">📧Email</router-link></li>
+        <li><router-link class="link" to="/email">📧Eemail</router-link></li>
       </ul>
       <div class="icon">
         <span @click="toogleMobileNav" v-show="mobile" :class="{'icon-active' : mobileNav}">☰</span>
@@ -17,13 +17,13 @@ export default {
       <ul v-show="mobileNav" class="dropdown-nav">
         <li><router-link class="link" to="/book">📚Books</router-link></li>
         <li><router-link class="link" to="/keep">📌Keep</router-link></li>
-        <li><router-link class="link" to="/email">📧Email</router-link></li>
+        <li><router-link class="link" to="/email">📧Eemail</router-link></li>
       </ul>
       </transition>
     </nav>
   </header>
    `,
-  name: 'navigation',
+  name: "navigation",
   data() {
     return {
       scrollNav: null,
@@ -33,7 +33,7 @@ export default {
     }
   },
   created() {
-    window.addEventListener('resize', this.cheackScreen)
+    window.addEventListener("resize", this.cheackScreen)
     this.cheackScreen()
   },
   methods: {

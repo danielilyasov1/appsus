@@ -1,19 +1,17 @@
 /* SETUP */
-@import 'setup/vars.css';
-
+@import "setup/vars.css";
 
 /* BASE */
-@import 'basic/base.css';
-
+@import "basic/base.css";
 
 /* COMPONENTS */
-@import 'compenents/header.css';
-@import 'compenents/home.css';
-@import 'compenents/footer.css';
+@import "compenents/header.css";
+@import "compenents/home.css";
+@import "compenents/footer.css";
 
 /* MEDIA QUERIES */
-@import '../app/book/css/style.css';
-@import 'mq/mq.css';
+@import "../app/book/css/style.css";
+@import "mq/mq.css";
 
 /* @import '../app/email/css/style.css'; */
 /* @import '../app/keep/css/style.css'; */

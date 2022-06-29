@@ -15,33 +15,33 @@ export const bookService = {
   addBook,
 }
 
-function getBookFromApi(value){
-  const BOOK_API = `https://www.googleapis.com/books/v1/volumes?printType=books&q=${value}`
-  return axios.get(BOOK_API).then(({data}) =>{
-    return _bookData(data.items)} )
-}
+// function getBookFromApi(value){
+//   const BOOK_API = `https://www.googleapis.com/books/v1/volumes?printType=books&q=${value}`
+//   return axios.get(BOOK_API).then(({data}) =>{
+//     return _bookData(data.items)} )
+// }
 
-function _bookData(data){
-  return data.map((book)=>{
-    let bookv = book.volumeInfo
-    return {
-      title:bookv.title,
-      subtitle:bookv.subtitle,
-      authors:bookv.authors,
-      publishedDate:bookv.publishedDate,
-      description:bookv.description,
-      pageCount:bookv.pageCount,
-      categories:bookv.categories,
-      thumbnail:bookv.imageLinks.thumbnail,
-      language:bookv.language,
-      listPrice:{
-        amount: rand(10,200),
-        currencyCode: "USD",
-        isOnSale: false,
-      }
-    }
-  })
-}
+// function _bookData(data){
+//   return data.map((book)=>{
+//     let bookv = book.volumeInfo
+//     return {
+//       title:bookv.title,
+//       subtitle:bookv.subtitle,
+//       authors:bookv.authors,
+//       publishedDate:bookv.publishedDate,
+//       description:bookv.description,
+//       pageCount:bookv.pageCount,
+//       categories:bookv.categories,
+//       thumbnail:bookv.imageLinks.thumbnail,
+//       language:bookv.language,
+//       listPrice:{
+//         amount: rand(10,200),
+//         currencyCode: "USD",
+//         isOnSale: false,
+//       }
+//     }
+//   })
+// }
 
 function addBook(book){
   return storageService.post(BOOKS_KEY,book)

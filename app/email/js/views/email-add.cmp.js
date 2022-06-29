@@ -1,26 +1,26 @@
-import { bookService } from "../services/book-service.js"
+import { emailService } from "../services/email-service.js"
 
 export default {
   template: `
- <!-- <h2>hi</h2>
+ <!-- <h2>hi</h2> -->
 
- <button @click='clickBack'>Back</button> -->
+ <!-- <button @click='clickBack'>Back</button>  -->
     <section>
-       <button @click='searchBook'>search</button>
-       <ul><li v-for="book in books"><button @click='addBook(book)'><img src='./img/send-arrow.png'></button>{{book.title}}</li></ul>
+       <button @click='searchEmail'>search</button>
+       <ul><li v-for="email in emails"><button @click='addEmail(email)'><img src='./img/send-arrow.png'></button>{{email.title}}</li></ul>
     </section>
 
 `,
   data() {
     return {
-      bookName: "",
-      books: null,
+      emailName: "",
+      emails: null,
     }
   },
   created() {},
   methods: {
-    addBook(book){
-        bookService.addBook(book)
+    addEmail(email) {
+      emailService.addEmail(email)
     },
   },
   computed: {},
