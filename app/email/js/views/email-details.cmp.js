@@ -36,9 +36,25 @@ export default {
     nextmail() {
       this.$router.push("/mail/" + this.nextmailId)
     },
-    remove(mailId) {
-      this.$emit("removed", mailId)
-    },
+    remove(id) {
+      mailService
+      .remove(id)
+      .then(() => {
+        console.log("Deleted successfully")
+        const idx = this.mails.findIndex((mail) => mail.id === id)
+        this.mails.splice(idx, 1)
+        eventBus.emit("show-msg", {
+          txt: "Deleted successfully",
+          type: "success",
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+        eventBus.emit("show-msg", {
+          txt: "Error - try again later",
+          type: "error",
+        })
+      })    },
   },
   computed: {
   },
