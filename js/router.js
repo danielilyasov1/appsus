@@ -1,47 +1,27 @@
 import homePage from './views/home-page.cmp.js'
 import keepPage from '../app/keep/js/keep.cmp.js'
 import emailPage from '../app/email/js/email.cmp.js'
-
-const aboutTeam = {
-  template: `
-        <section class="about-team">
-            <h2>About Our Team</h2>
-            <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum cum nam voluptas iste nulla, dolorum blanditiis! Dolorem, rerum libero! Nihil, corrupti rem! Dolorem rem explicabo pariatur nihil quae laboriosam!
-            </p>
-        </section>
-    `,
-}
-const aboutService = {
-  template: `
-        <section class="about-service">
-            <h2>Top Services</h2>
-            <p>
-            Services bla Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum cum nam voluptas iste nulla, dolorum blanditiis! Dolorem, rerum libero! Nihil, corrupti rem! Dolorem rem explicabo pariatur nihil quae laboriosam!
-            </p>
-        </section>
-    `,
-}
+import bookApp from '../app/book/js/views/book-app.cmp.js'
+import bookDetails from '../app/book/js/views/book-details.cmp.js'
+import bookAdd from '../app/book/js/views/book-add.cmp.js'
 
 const routes = [
   {
     path: '/',
     component: homePage,
-    children: [
-      {
-        path: 'team',
-        component: aboutTeam,
-      },
-      {
-        path: 'service',
-        component: aboutService,
-      },
-    ],
   },
-//   {
-//     path: '/book',
-//     component: bookPage,
-//   },
+  {
+    path: '/book',
+    component: bookApp,
+  },
+  {
+    path: '/book/:bookId',
+    component: bookDetails,
+  },
+  {
+    path: '/book/add/:bookId?',
+    component: bookAdd,
+  },
   {
     path: '/keep',
     component: keepPage,
