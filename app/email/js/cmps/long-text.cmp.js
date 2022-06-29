@@ -1,22 +1,20 @@
 export default {
   props: ["text"],
   template: `
-    <p>{{formatedText}}<span v-if="!isMore && longText">...</span> <span v-if="longText" @click="isMore=!isMore">{{readText}} </span></p>
+    <p class='text-body'>{{formatedText}}<span v-if="!isMore && longText">...</span> <span v-if="longText" @click="isMore=!isMore"></span></p>
 `,
   data() {
     return {
       isMore: false,
-      longText: this.text.length > 40,
+      longText: this.text.length > 60,
     }
   },
   methods: {},
   computed: {
     formatedText() {
-      return this.isMore ? this.text : this.text.slice(0, 40)
+      return this.isMore ? this.text : this.text.slice(0, 60)
     },
-    readText() {
-      return this.isMore ? " Read Less" : ""
-    },
+
     
   },
 }

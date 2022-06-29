@@ -3,10 +3,10 @@ import longText from "../cmps/long-text.cmp.js"
 export default {
   props: ["email"],
   template: `
+      <div class='date-mail'>{{date}}</div>
       <div>{{email.name}}</div>
       <div>{{email.subject}}</div>
       <long-text :text="email.body"></long-text>
-      <div>{{date}}</div>
   `,
   components: {
     longText,
@@ -17,7 +17,8 @@ export default {
   methods: {},
   computed: {
     date() {
-      return this.email.sentAt
+      let date = this.email.sentAt
+      return new Date(date).toLocaleTimeString()
     },
   },
 }

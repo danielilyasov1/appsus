@@ -59,21 +59,21 @@ function _createEmails() {
     emails = [
       {
         id: "e101",
-        subject: "hello!",
+        subject: "Hello!",
         body: "Would love to catch up sometimes",
         isRead: false,
         sentAt: 1551133930594,
         to: "dor@momo.com",
-        name: "dor",
+        name: "Dor",
       },
       {
         id: "e102",
-        subject: "welcome!",
+        subject: "Welcome!",
         body: "Would love to catch up sometimes, Would love to catch up sometimes",
         isRead: false,
         sentAt: 1551133930594,
         to: "daniel@momo.com",
-        name: "daniel",
+        name: "Daniel",
       },
       {
         id: "e103",
@@ -82,7 +82,7 @@ function _createEmails() {
         isRead: false,
         sentAt: 1551133930594,
         to: "momo@momo.com",
-        name: "momo",
+        name: "Momo",
       },
     ]
     utilService.saveToStorage(MAILS_KEY, emails)

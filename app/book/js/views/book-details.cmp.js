@@ -5,9 +5,13 @@ import { bookService } from "../services/book-service.js"
 export default {
   template: `
       <section v-if="book" class="book-details">
+        <div class='head-dateils'>
           <h4>Book Details</h4>
           <img :src="bookImgUrl" alt="">
-          <add-rate/>
+          <button class='btn1' @click='nextBook'>next book</button>
+          <button class='btn2' @click='clickBack'>Back</button>
+        </div>
+        <div class='details'>
           <p><span>Title: </span>{{book.title}}</p>
           <p><span>Subtitle: </span>{{book.subtitle}}</p>
           <p><span>Authors: </span>{{book.authors[0]}}</p>
@@ -20,9 +24,9 @@ export default {
           <p><span>Page count: </span>{{book.pageCount}}</p>
           <p><span>Published date: </span>{{book.publishedDate}}</p>
           <p><span>Language: </span>{{book.language}}</p>
-          <button @click='nextBook'>next book</button>
-          <!-- <router-link :to="'/book/' + nextBookId">Next Book</router-link> -->
-          <button @click='clickBack'>Back</button>
+        
+          <add-rate/>
+        </div>
       </section>
       <div v-else>Loading...</div>
   `,
