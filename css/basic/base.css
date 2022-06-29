@@ -1,11 +1,16 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    /* font-weight: 400; */
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  /* font-weight: 400; */
+}
+
+body {
+  background-color: black;
+}
 
 .logo {
-    font-family: Eurofurencer;
-    font-size: 2.5em;
+  font-family: Eurofurencer;
+  font-size: 2.5em;
 }
