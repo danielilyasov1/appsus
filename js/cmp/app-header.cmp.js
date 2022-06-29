@@ -6,7 +6,7 @@ export default {
       <router-link class="link" to="/"><img src="/img/Appsus.png" alt="logo"></router-link>
       </div>
       <ul v-show="!mobile" class="navigation">
-        <li><router-link class="link" to="">📚Books</router-link></li>
+        <li><router-link class="link" to="/book">📚Books</router-link></li>
         <li><router-link class="link" to="/keep">📌Keep</router-link></li>
         <li><router-link class="link" to="/email">📧Email</router-link></li>
       </ul>
@@ -15,7 +15,7 @@ export default {
       </div>
       <transition name="mobile-nav">
       <ul v-show="mobileNav" class="dropdown-nav">
-        <li><router-link class="link" to="">📚Books</router-link></li>
+        <li><router-link class="link" to="/book">📚Books</router-link></li>
         <li><router-link class="link" to="/keep">📌Keep</router-link></li>
         <li><router-link class="link" to="/email">📧Email</router-link></li>
       </ul>
@@ -53,6 +53,3 @@ export default {
   },
   computed: {},
 }
-/* <router-link to="/">Home</router-link>|
-<router-link to="/book">Books</router-link>|
-<router-link to="/about">About</router-link>| */

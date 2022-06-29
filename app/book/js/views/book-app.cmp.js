@@ -1,8 +1,8 @@
-import { bookService } from "../services/book-service.js"
-import bookList from "../cmps/book-list.cmp.js"
-import bookFilter from "../cmps/book-filter-cmp.js"
-import bookAdd from "./book-add.cmp.js"
-import { eventBus } from "../services/eventBus-service.js"
+import { bookService } from '../services/book-service.js'
+import bookList from '../cmps/book-list.cmp.js'
+import bookFilter from '../cmps/book-filter-cmp.js'
+import bookAdd from './book-add.cmp.js'
+import { eventBus } from '../services/eventBus-service.js'
 
 export default {
   template: `
@@ -13,6 +13,7 @@ export default {
    </section>
 
 `,
+
   components: {
     bookList,
     bookFilter,
@@ -35,19 +36,19 @@ export default {
       bookService
         .remove(id)
         .then(() => {
-          console.log("Deleted successfully")
+          console.log('Deleted successfully')
           const idx = this.books.findIndex((book) => book.id === id)
           this.books.splice(idx, 1)
-          eventBus.emit("show-msg", {
-            txt: "Deleted successfully",
-            type: "success",
+          eventBus.emit('show-msg', {
+            txt: 'Deleted successfully',
+            type: 'success',
           })
         })
         .catch((err) => {
           console.log(err)
-          eventBus.emit("show-msg", {
-            txt: "Error - try again later",
-            type: "error",
+          eventBus.emit('show-msg', {
+            txt: 'Error - try again later',
+            type: 'error',
           })
         })
     },
@@ -61,11 +62,8 @@ export default {
   computed: {
     booksToDisplay() {
       if (!this.filterBy) return this.books
-      const regex = new RegExp(this.filterBy.title, "i")
-      return this.books.filter(
-        (book) =>
-          regex.test(book.title) && book.listPrice.amount >= this.filterBy.price
-      )
+      const regex = new RegExp(this.filterBy.title, 'i')
+      return this.books.filter((book) => regex.test(book.title) && book.listPrice.amount >= this.filterBy.price)
     },
   },
   unmounted() {},
