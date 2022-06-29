@@ -1,0 +1,50 @@
+.footer {
+    line-height: 5rem;
+}
+
+.footer p {
+    font-family: 'Lato', sans-serif;
+    color: var(--clr4);
+    font-size: 0.8125em;
+    margin-bottom: 0;
+}
+
+.footer p span {
+    color: var(--clr5);
+}
+
+.social-links{
+    margin-bottom: 5rem;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: white;
+    background-color: var(--clr6);
+}
+
+.social-links>*:not(:last-child) {
+    margin-inline-end: 1.25rem;
+}
+
+
+/* social links colors */
+.social-links #fb:hover {
+    background-color: #516FAD;
+}
+
+.social-links #twitter:hover {
+    background-color: #2B99E7;
+}
+
+.social-links #be:hover {
+    background-color: #0053F2;
+}
+
+.social-links #basketball:hover {
+    background-color: #E46705;
+}
