@@ -6,7 +6,7 @@ export default {
   props: ["email"],
   template: `
       <section v-if="email" class="email-details">
-          <h2>{{email.subject}}</h2>
+      <h2>{{email.subject}}</h2>
           <p><span class='email-name'>{{email.name}}</span>  &#60;{{email.to}}&#62;</p>
           <p>{{email.body}}</p>
           <button @click="remove(email.id)">Delete mail</button>
