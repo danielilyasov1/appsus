@@ -18,7 +18,6 @@ export default {
   components: {
     longText,
     emailDetails,
-
   },
   data() {
     return {
@@ -28,8 +27,9 @@ export default {
   methods: {},
   computed: {
     date() {
-      let date = this.email.sentAt
-      return new Date(date).toLocaleTimeString()
+      return new Date(this.email.sentAt)
+      .toString().split(" ").splice(1, 2).join(" ")
+       
     },
   },
 }

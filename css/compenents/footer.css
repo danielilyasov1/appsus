@@ -1,14 +1,13 @@
 .app-footer {
   background-color: #535353;
-  color: whitesmoke;
   text-align: center;
   height: 5vh;
-  margin: 1px;
-}
-
-footer {
   position: fixed;
-  left: 0;
   bottom: 0;
   width: 100%;
+}
+
+footer p{
+  color: whitesmoke;
+  left: 0;
 }

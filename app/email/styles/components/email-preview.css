@@ -12,6 +12,8 @@
 .date-mail {
   position: absolute;
   right: 0;
+  font-size:medium;
+  font-weight: bold;
 }
 
 .date-mail-container {
@@ -31,6 +33,13 @@
 
 .email-preview-container .name-email{
   margin-right: 2em;
+  font-size:medium;
+  font-weight: bold;
+}
+
+.email-preview-container .sub-email{
+  font-size:medium;
+  font-weight: bold;
 }
 
 .mail {
