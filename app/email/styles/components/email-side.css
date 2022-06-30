@@ -1,0 +1,38 @@
+.nav-btn{
+    height: 2rem;
+    font-size: larger;
+    border-top: 2px solid gray;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: #97cae8;
+    cursor: pointer;
+    
+}
+
+.nav-btn:hover{
+    border-radius: 50px;
+    border-top:0;
+    background-color: rgba(245, 134, 134, 0.778);
+    color: rgb(235, 4, 4);
+    
+}
+
+.trash{
+    border-bottom: 2px solid gray;
+
+}
+
+.email-compose{
+    height: 3rem;
+    font-size: larger;
+    border-radius: 40px;
+    margin-bottom: 2rem;
+    border: 2px solid gray;
+    cursor: pointer;
+    
+}
+
+.email-compose:hover{
+    background-color: rgba(200, 199, 199, 0.574);
+}

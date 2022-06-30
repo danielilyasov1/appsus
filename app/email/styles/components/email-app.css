@@ -1,4 +1,16 @@
-.email-app{
+.email-app,.email-details{
     background-color: #97cae8;
     height: 89vh;
+}
+
+.flex{
+    display: flex;
+}
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    margin: 5px;
+    margin-top: 15px;
 }

@@ -1,22 +1,26 @@
 import { emailService } from "../services/email-service.js"
 import emailList from "../cmps/email-list.cmp.js"
 import emailFilter from "../cmps/email-filter-cmp.js"
-import emailAdd from "./email-add.cmp.js"
+import emailSide from "./email-side.cmp.js"
+
 // import { eventBus } from "../services/eventBus-service.js"
 
 export default {
   template: `
    <section class="email-app">
     <email-filter @filtered="filterEmail" :emails="emails" v-if="emails"/>
-    <email-add></email-add>
+    <div class='flex'>
+    <email-side></email-side>
     <email-list @selected="selectEmail" :emails="emailsToDisplay" />
+    </div>
    </section>
 
 `,
   components: {
     emailList,
     emailFilter,
-    emailAdd,
+    emailSide,
+    
   },
   data() {
     return {

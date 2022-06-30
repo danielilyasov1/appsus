@@ -5,9 +5,9 @@ import { emailService } from "../services/email-service.js"
 export default {
   template: `
       <section v-if="email" class="email-details">
-          <h4>email Details</h4>
+          <!-- <h4>email Details</h4> -->
           <h2>{{email.subject}}</h2>
-          <p>{{email.name}}  &#60;{{email.to}}&#62;</p>
+          <p><span class='email-name'>{{email.name}}</span>  &#60;{{email.to}}&#62;</p>
           <p>{{email.body}}</p>
           <button @click="remove(email.id)">🗑</button>
           <button @click="nextemail">next email</button>

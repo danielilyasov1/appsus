@@ -6,7 +6,7 @@ export default {
  <section v-if="emails" class="email-list">
     <ul>
         <li v-for="(email,idx) in emails" :key="email.id" class="email-preview-container">
-            <img src='app/email/img/user-img.png'/>
+            <img class='img-user' src='app/email/img/user-img.png'/>
             <div class='mail'>
               <router-link :to="'/email/'+email.id" class='details'>    
                 <email-preview :email="email"/>

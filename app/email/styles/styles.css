@@ -9,6 +9,7 @@
 @import "components/email-preview.css";
 @import "components/email-app.css";
 @import "components/email-details.css";
+@import "components/email-side.css";
 
 /* MEDIA QUERIES */
 @import 'mq/mq.css'
