@@ -3,7 +3,7 @@ export default {
   <header :class="{'scrolled-nav':scrollNav}">
     <nav>
       <div class="branding">
-      <router-link class="link" to="/"><img src="/img/appsus2.png" alt="logo"></router-link>
+      <router-link class="link" to="/"><img src="img/appsus2.png" alt="logo"></router-link>
       </div>
       <ul v-show="!mobile" class="navigation">
         <li><router-link class="link" to="/book">📚Books</router-link></li>
