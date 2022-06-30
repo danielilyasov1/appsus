@@ -61,8 +61,18 @@ export default {
   computed: {
     notesToDisplay() {
       if (!this.filterBy) return this.notes
-      const regex = new RegExp(this.filterBy.title, 'i')
-      return this.notes.filter((note) => regex.test(note.info.title))
+      if (this.filterBy.title === '' && this.filterBy.type === '') return this.notes
+      const regexTitle = new RegExp(this.filterBy.title, 'i')
+      if (this.filterBy.title === '') return this.notes.filter((note) => note.type === this.filterBy.type)
+      if (this.filterBy.type === '') return this.notes.filter((note) => regexTitle.test(note.info.title))
+      return this.notes.filter((note) => regexTitle.test(note.info.title) && note.type === this.filterBy.type)
+
+      // const regexType = new RegExp(this.filterBy.type, 'i')
+
+      // if (this.filterBy.type === '' && this.filterBy.title === '') return this.notes
+      // if (this.filterBy.title === '') return this.notes.filter((note) => note.type === this.filterBy.type)
+      // return this.notes.filter((note) => regexTitle.test(note.info.title) && note.type === this.filterBy.type)
+      // return this.notes.filter((note) => regex.test(note.title) && note.listPrice.amount >= this.filterBy.price)
     },
   },
   unmounted() {},
