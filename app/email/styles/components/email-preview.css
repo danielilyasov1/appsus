@@ -1,0 +1,39 @@
+.date-mail{
+    float:right;
+}
+
+.email-list{
+    margin: 15px;
+}
+
+.email-preview-container{
+    border: 2px solid rgb(171, 171, 171);
+    display: flex;
+    background-color: rgb(200, 221, 230);
+}
+
+.email-preview-container img{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 8vw;
+    margin-left: 1vw;
+    width: 4rem;
+    height: 4rem;
+}
+
+.mail{
+    margin-top: 0;
+    font-size: medium;
+    width:80vw;
+}
+
+.details{
+    color: black;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.text-body{
+    font-size: smaller;
+}

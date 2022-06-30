@@ -22,7 +22,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #d596ba;
+  background-color: #c396e4;
   height: 88vh;
 }
 
@@ -40,10 +40,10 @@ h3 {
 }
 
 body {
-  margin: 0;
+  margin-bottom: 40px;
   /* text-align: center; */
   background-color: rgb(246, 231, 212);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* app-header, app-footer */
@@ -57,24 +57,28 @@ body {
 /* book-app */
 
 .book-app {
-  background-color: rgb(248, 207, 214);
+  background-color: #e6ccf8;
 }
 
 .googleBook {
   margin: 30px;
   text-align: left;
 }
+.googleBook button{
+  cursor: pointer;
+}
 
 .googleBook li button {
   background-color: rgb(248, 207, 214);
   border-radius: 100px;
-  border: #d596ba;
+  border: #c396e4;
   padding: 5px;
   cursor: pointer;
 }
 
 .googleBook ul {
   list-style: none;
+  color: black;
 }
 
 /* book-list */
@@ -86,21 +90,12 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin: 0;
-}
-
-/* img { */
-/* height: 173.3333px; */
-/* width: 130px; */
-/* } */
-
-.details {
-  margin: 5px;
-  font-size: larger;
+  height: auto;
 }
 
 .rate {
-  margin-top: -20px;
-  float: right;
+  margin-top: -3vh;
+  margin-left: 30vw;
 }
 
 /* book-preview */
@@ -110,7 +105,7 @@ body {
   margin: 10px;
   width: 12em;
   height: 37vh;
-  background-color: rgb(213, 150, 186);
+  background-color: #c396e4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -121,15 +116,49 @@ body {
   border-radius: 10px;
 }
 
+.book-preview-container img {
+  height: 150px;
+  width: 120px;
+}
+
+.actions button{
+  margin-right: 20px;
+  width: 25px;
+  border-radius: 5px;
+  border: 2px groove rgb(246, 231, 212);
+  cursor: pointer;
+}
+
 /* book-details */
 .book-details {
-  background-color: rgb(213, 150, 186);
+  background-color: #c396e4;
   padding: 20px;
+  height: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .book-details img {
-  height: 300px;
-  width: 260px;
+  height: 450px;
+  width: 380px;
+  margin: 20px;
+}
+
+.details {
+  margin-top: 45px;
+}
+
+.head-dateils button {
+  margin-left: 1.2rem;
+  border-radius: 50px;
+    font-size: larger;
+}
+
+.btn1 {
+  width: 150px;
+}
+.btn2 {
+  width: 120px;
 }
 
 .book-details span {
@@ -144,7 +173,7 @@ body {
 }
 
 .filter-books {
-  background-color: rgb(213, 150, 186);
+  background-color: #c396e4;
   padding: 10px;
   padding-left: 30px;
 }
@@ -157,4 +186,49 @@ body {
 .about,
 .nav {
   padding: 10px;
+}
+
+/* MOBILE */
+@media screen and (max-width: 673px) {
+  .filter-books {
+    text-align: center;
+  }
+  .book-preview-container {
+    width: 10em;
+    height: 37vh;
+  }
+  .book-details {
+    display: block;
+  }
+
+  .app-layout {
+    height: auto;
+  }
+
+  .book-details img {
+    height: 350px;
+    width: 300px;
+    margin: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .details {
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+  .head-dateils h4{
+    margin-left: 30px;
+    font-size:x-large;
+  }
+
+  .head-dateils button {
+    margin-left: 2rem;
+  }
+
+  .rate {
+    margin-top: 20px;
+    margin-left: 0;
+  }
 }

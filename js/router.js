@@ -5,28 +5,29 @@ import keepDetails from '../app/keep/js/views/keep-details.cmp.js'
 import emailPage from '../app/email/js/email.cmp.js'
 import bookApp from '../app/book/js/views/book-app.cmp.js'
 import bookDetails from '../app/book/js/views/book-details.cmp.js'
-import bookAdd from '../app/book/js/views/book-add.cmp.js'
+import bookAdd from "../app/book/js/views/book-add.cmp.js"
+import emailDetails from "../app/email/js/views/email-details.cmp.js"
 
 
 const routes = [
   {
-    path: '/',
+    path: "/",
     component: homePage,
   },
   {
-    path: '/book',
+    path: "/book",
     component: bookApp,
   },
   {
-    path: '/book/:bookId',
+    path: "/book/:bookId",
     component: bookDetails,
   },
   {
-    path: '/book/add/:bookId?',
+    path: "/book/add/:bookId?",
     component: bookAdd,
   },
   {
-    path: '/keep',
+    path: "/keep",
     component: keepPage,
   },
   {
@@ -38,8 +39,13 @@ const routes = [
     component: keepAdd,
   },
   {
-    path: '/email',
+
+    path: "/email",
     component: emailPage,
+  },
+  {
+    path: "/email/:emailId",
+    component: emailDetails,
   },
 ]
 

@@ -1,8 +1,11 @@
+import emailApp from "./views/email-app.cmp.js"
 export default {
   template: `
         <section>
-            Email
+            <email-app></email-app>
         </section>
     `,
-  components: {},
+  components: {
+    emailApp,
+  },
 }

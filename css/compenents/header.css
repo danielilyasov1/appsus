@@ -47,6 +47,17 @@ li {
   align-items: center;
 }
 
+.branding a{
+  height: 80px; 
+  width: 200px;
+}
+
+.branding img{
+  height: 90px;
+  width: 230px;
+  margin-top: -10px;
+}
+
 img {
   width: 50px;
   transition: 0.5s ease all;
@@ -83,11 +94,12 @@ span {
   flex-direction: column;
   position: fixed;
   width: 100%;
-  max-width: 250px;
-  /* height: 100%; */
-  background-color: white;
-  top: 50px;
-  right: 75px;
+  max-width: 200px;
+  background-color: #54545472;
+  border-radius: 20px;
+  padding: 5px;
+  top: 110px;
+  right: -30px;
 }
 
 .mobile-nav-enter-active,

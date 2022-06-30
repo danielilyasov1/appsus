@@ -3,7 +3,7 @@ export default {
   <header :class="{'scrolled-nav':scrollNav}">
     <nav>
       <div class="branding">
-      <router-link class="link" to="/"><img src="/img/Appsus.png" alt="logo"></router-link>
+      <router-link class="link" to="/"><img src="/img/appsus2.png" alt="logo"></router-link>
       </div>
       <ul v-show="!mobile" class="navigation">
         <li><router-link class="link" to="/book">📚Books</router-link></li>
@@ -23,7 +23,7 @@ export default {
     </nav>
   </header>
    `,
-  name: 'navigation',
+  name: "navigation",
   data() {
     return {
       scrollNav: null,
@@ -33,7 +33,7 @@ export default {
     }
   },
   created() {
-    window.addEventListener('resize', this.cheackScreen)
+    window.addEventListener("resize", this.cheackScreen)
     this.cheackScreen()
   },
   methods: {
