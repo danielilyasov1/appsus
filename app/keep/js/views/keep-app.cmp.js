@@ -62,7 +62,7 @@ export default {
     notesToDisplay() {
       if (!this.filterBy) return this.notes
       const regex = new RegExp(this.filterBy.title, 'i')
-      return this.notes.filter((note) => regex.test(note.title) && note.listPrice.amount >= this.filterBy.price)
+      return this.notes.filter((note) => regex.test(note.info.title))
     },
   },
   unmounted() {},

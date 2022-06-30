@@ -4,7 +4,7 @@ export default {
     <section class="filter-notes" >
     Search:
 	<input type="text" v-model="filterBy.title" @input="filter" placeholder='Enter note name..'>
-    Min price:
+    note type:
 	<input type="range" v-model="filterBy.price" @input="filter"  v-model.number="filterBy.price">
     {{filterBy.price}}
     </section>
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     filter() {
-      // this.$emit('filtered', this.filterBy)
+      this.$emit('filtered', this.filterBy)
     },
   },
   computed: {},
