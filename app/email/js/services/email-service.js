@@ -47,7 +47,7 @@ function getEmptyEmail() {
   return { id: "", name: "", to: "", subject: "", body: "" }
 }
 function getLoggedinUser() {
-  const loggedinUser = {
+  return {
     email: "user@appsus.com",
     fullname: "akuna matata",
   }

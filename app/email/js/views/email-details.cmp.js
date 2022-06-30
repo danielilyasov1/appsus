@@ -1,41 +1,29 @@
 import longText from "../cmps/long-text.cmp.js"
-// import addRate from "../cmps/add-rate.cmp.js"
 import { emailService } from "../services/email-service.js"
+import { eventBus } from "../services/eventBus-service.js";
 
 export default {
+  props: ["email"],
   template: `
       <section v-if="email" class="email-details">
-          <!-- <h4>email Details</h4> -->
           <h2>{{email.subject}}</h2>
           <p><span class='email-name'>{{email.name}}</span>  &#60;{{email.to}}&#62;</p>
           <p>{{email.body}}</p>
-          <button @click="remove(email.id)">🗑</button>
-          <button @click="nextemail">next email</button>
-          <button @click="clickBack">Back</button>
+          <button @click="remove(email.id)">Delete mail</button>
       </section>
       <div v-else>Loading...</div>
   `,
   components: {
     longText,
-    // addRate,
   },
   data() {
     return {
-      email: null,
-      nextemailId: null,
+     
     }
   },
-  created() {
-    const id = this.$route.params.emailId
-    emailService.get(id).then((email) => (this.email = email))
-  },
+  mounted() {},
   methods: {
-    clickBack() {
-      this.$router.back()
-    },
-    nextemail() {
-      this.$router.push("/email/" + this.nextemailId)
-    },
+   
     remove(id) {
       emailService
         .remove(id)
@@ -58,19 +46,4 @@ export default {
     },
   },
   computed: {},
-  watch: {
-    "$route.params.emailId": {
-      handler() {
-        const id = this.$route.params.emailId
-        if (!id) return
-        emailService.get(id).then((email) => {
-          this.email = email
-          emailService.getNextEmailId(id).then((nextemailId) => {
-            this.nextemailId = nextemailId
-          })
-        })
-      },
-      immediate: true,
-    },
-  },
 }

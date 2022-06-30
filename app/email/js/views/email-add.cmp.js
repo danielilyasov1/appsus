@@ -3,10 +3,9 @@ import { emailService } from "../services/email-service.js"
 export default {
   template: `
     <section>
-
       <form>
-
-        <button @click='addEmail(email)'><img src='app/email/img/send-arrow.png'></button>
+        <h1>hi</h1>
+        <button @click='addEmail(email)'>&#10148;</button>
       </form>
     </section>
 

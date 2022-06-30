@@ -1,3 +1,8 @@
-.email-name{
-    
+.sub-email{
+    padding-right: 5px;
+}
+
+.email-details{
+    background-color: aquamarine;
+    /* z-index: 2; */
 }
