@@ -1,6 +1,10 @@
-import noteImg from './img-keep.cmp.js'
-import noteTxt from './text-keep.cmp.js'
-import noteTodos from './text-keep.cmp.js'
+import noteImg from './keep-type-cmp/keep-img.cmp.js'
+import noteTxt from './keep-type-cmp/keep-text.cmp.js'
+import noteTodos from './keep-type-cmp/keep-todo.cmp.js'
+import noteVideo from './keep-type-cmp/keep-video.cmp.js'
+import noteAudio from './keep-type-cmp/keep-audio.cmp.js'
+import noteCanvas from './keep-type-cmp/keep-canvas.cmp.js'
+import noteMap from './keep-type-cmp/keep-map.cmp.js'
 
 export default {
   props: ['notes'],
@@ -22,6 +26,10 @@ export default {
     noteTxt,
     noteImg,
     noteTodos,
+    noteVideo,
+    noteAudio,
+    noteCanvas,
+    noteMap,
   },
 
   data() {

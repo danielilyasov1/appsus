@@ -69,6 +69,7 @@ function _createNotes() {
         { txt: 'Coding power', doneAt: 187111111 },
       ])
     )
+    notes.push(_createNote('n104', 'note-video', { url: 'video', title: 'render video' }))
     utilService.saveToStorage(NOTES_KEY, notes)
   }
   return notes

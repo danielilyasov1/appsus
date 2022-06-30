@@ -1,13 +1,10 @@
 export default {
   props: ['note'],
   template: `
-  <section>
-    <label>
-      <div v-for="item in note.info">
-        {{item}}
-      </div>
-    </label>
-  </section>
+  <img  alt="">
+  <p>Id: {{note.id}}</p>
+  <p> type: {{note.type}}</p>
+  <p> infoTxt: {{note.info}}</p>
   `,
 
   data() {
