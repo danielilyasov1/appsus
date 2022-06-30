@@ -1,6 +1,10 @@
 .app-footer {
+<<<<<<< HEAD
+  background-color: #545454;
+=======
   background-color: #535353;
   color: whitesmoke;
+>>>>>>> 88a4346da2c3e0aa7ee5e4457cddc99a33c21216
   text-align: center;
   height: 5vh;
   margin: 1px;

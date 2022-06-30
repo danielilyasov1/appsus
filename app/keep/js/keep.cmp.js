@@ -1,16 +1,16 @@
-// import appHeader from "./cmps/app-header.cmp.js";
-// import appFooter from "./cmps/app-footer.cmp.js";
-// import { router } from './router.js';
-// import userMsg from './cmps/user-msg.cmp.js';
+import keepApp from './views/keep-app.cmp.js'
 
 export default {
   template: `
   <section>
-    Keep
+   <keep-app />
   </section>
 `,
   data() {
     return {}
+  },
+  components: {
+    keepApp,
   },
   mounted() {},
   methods: {},
@@ -18,7 +18,3 @@ export default {
   created() {},
   unmounted() {},
 }
-
-// const app = Vue.createApp(options);
-// app.use(router)
-// app.mount("#app");

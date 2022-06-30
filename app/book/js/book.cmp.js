@@ -1,9 +1,11 @@
+import bookApp from './views/book-app.cmp'
 export default {
   template: `
         <section>
-        Book
-            <router-view/>
+            <book-app></book-app>
         </section>
     `,
-  components: {},
+  components: {
+    bookApp,
+  },
 }
