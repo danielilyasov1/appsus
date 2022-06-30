@@ -15,7 +15,7 @@ export default {
                 <component :is="note.type" :note="note"></component>
                 <div class="actions">
                     <button @click="remove(note.id)">X</button>
-                    <router-link :to="'/keep/'+note.id" class='details'>Details</router-link>
+                    <router-link :to="'/keep/'+note.id" class='detailsK'>Details</router-link>
                     <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
                 </div>
             </li>

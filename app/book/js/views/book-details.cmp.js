@@ -11,7 +11,7 @@ export default {
           <button class='btn1' @click='nextBook'>next book</button>
           <button class='btn2' @click='clickBack'>Back</button>
         </div>
-        <div class='details'>
+        <div class='detailsB'>
           <p><span>Title: </span>{{book.title}}</p>
           <p><span>Subtitle: </span>{{book.subtitle}}</p>
           <p><span>Authors: </span>{{book.authors[0]}}</p>

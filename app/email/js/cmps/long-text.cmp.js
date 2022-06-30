@@ -1,7 +1,7 @@
 export default {
   props: ["text"],
   template: `
-    <p class='text-body'>{{formatedText}}<span v-if="!isMore && longText" >...</span> <span v-if="longText" @click="isMore=!isMore"></span></p>
+    <span class='text-body'>-{{formatedText}}<span v-if="!isMore && longText" >...</span> <span v-if="longText" @click="isMore=!isMore"></span></span>
 `,
   data() {
     return {

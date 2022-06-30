@@ -4,5 +4,57 @@
     text-align: center;
   }
 
-  
+  .filter-emails input {
+    margin-left: 0;
+  }
+
+  /* email preview */
+  .date-mail {
+    float: right;
+    /* margin-top: -5em; */
+    /* margin-right: -6em; */
+  }
+
+  .email-list {
+    margin: 15px;
+    width: 90%;
+  }
+
+  .email-preview-container {
+    margin-top: 0;
+    display: flex;
+    height: 8rem;
+  }
+
+  .email-preview-container-section{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detailsE {
+    display: block;
+    color: black;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  .text-body {
+    padding: 0;
+    height: 17.78px;
+    font-size: smaller;
+  }
+
+  .img-user {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 8vw;
+    margin-left: 1vw;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .side-bar {
+    display: none;
+  }
 }

@@ -43,10 +43,10 @@ const routes = [
     path: "/email",
     component: emailPage,
   },
-  {
-    path: "/email/:emailId",
-    component: emailDetails,
-  },
+  // {
+  //   path: "/email/:emailId",
+  //   component: emailDetails,
+  // },
 ]
 
 export const router = VueRouter.createRouter({

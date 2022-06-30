@@ -1,18 +1,29 @@
 import longText from "../cmps/long-text.cmp.js"
+import emailDetails from "./../views/email-details.cmp.js"
 
 export default {
   props: ["email"],
   template: `
-      <div>{{email.name}}</div>
-      <div>{{email.subject}}</div>
-      <long-text :text="email.body"></long-text>
-      <div class='date-mail'>{{date}}</div>
-  `,
+    <section  v-on:click="shouldShow =!shouldShow" class="email-preview-container-section">
+
+    <span class='name-email'>{{email.name}}</span>
+    <span class='sub-email'>{{email.subject}}</span>
+    <long-text :text="email.body"></long-text>
+    <span class='date-mail'>{{date}}</span>
+    
+    <email-details :email='email' v-if='shouldShow' class='detailsE'></email-details>
+  </section>
+
+    `,
   components: {
     longText,
+    emailDetails,
+
   },
   data() {
-    return {}
+    return {
+      shouldShow: false,
+    }
   },
   methods: {},
   computed: {
