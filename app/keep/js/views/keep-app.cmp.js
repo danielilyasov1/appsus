@@ -1,21 +1,21 @@
-// import { noteService } from "../services/note-service.js"
+import { keepService } from '../services/keep-service.js'
 import keepList from '../cmps/keep-list.cmp.js'
 import keepFilter from '../cmps/keep-filter-cmp.js'
 import keepAdd from './keep-add.cmp.js'
-// import { eventBus } from "../services/eventBus-service.js"
-note
+import { eventBus } from '../services/eventBus-service.js'
+
 export default {
   template: `
    <section class="note-app">
-    <note-filter @filtered="filterNote" :notes="notes" v-if="notes"/>
-    <note-add class='google-note'></note-add>
-    <note-list @removed="removeNote" @selected="selectNote" :notes="notesToDisplay" />
+    <keep-filter @filtered="filterNote" :notes="notes" v-if="notes"/>
+    <keep-add class='google-note' />
+    <keep-list @removed="removeNote" @selected="selectNote" :notes="notesToDisplay" />
    </section>
 
 `,
   components: {
-    noteList: keepList,
-    noteFilter: keepFilter,
+    keepList,
+    keepFilter,
     keepAdd,
   },
   data() {
@@ -26,13 +26,13 @@ export default {
     }
   },
   created() {
-    noteService.query().then((notes) => {
+    keepService.query().then((notes) => {
       this.notes = notes
     })
   },
   methods: {
     removeNote(id) {
-      noteService
+      keepService
         .remove(id)
         .then(() => {
           console.log('Deleted successfully')

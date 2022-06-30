@@ -21,7 +21,7 @@ export default {
           <p><span>Published date: </span>{{note.publishedDate}}</p>
           <p><span>Language: </span>{{note.language}}</p>
           <button @click='nextnote'>next note</button>
-          <!-- <router-link :to="'/note/' + nextnoteId">Next note</router-link> -->
+          <!-- <router-link :to="'/keep/' + nextnoteId">Next note</router-link> -->
           <button @click='clickBack'>Back</button>
       </section>
       <div v-else>Loading...</div>

@@ -1,9 +1,12 @@
 import homePage from './views/home-page.cmp.js'
 import keepPage from '../app/keep/js/keep.cmp.js'
+import keepAdd from '../app/keep/js/views/keep-add.cmp.js'
+import keepDetails from '../app/keep/js/views/keep-details.cmp.js'
 import emailPage from '../app/email/js/email.cmp.js'
 import bookApp from '../app/book/js/views/book-app.cmp.js'
 import bookDetails from '../app/book/js/views/book-details.cmp.js'
 import bookAdd from '../app/book/js/views/book-add.cmp.js'
+
 
 const routes = [
   {
@@ -25,6 +28,14 @@ const routes = [
   {
     path: '/keep',
     component: keepPage,
+  },
+  {
+    path: '/keep/:keepId',
+    component: keepDetails,
+  },
+  {
+    path: '/keep/add/:keepId?',
+    component: keepAdd,
   },
   {
     path: '/email',

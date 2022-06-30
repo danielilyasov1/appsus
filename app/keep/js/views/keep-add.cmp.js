@@ -26,7 +26,7 @@ export default {
     valueSearch() {
       this.$emit('search', this.noteName)
     },
-    searchnote() {
+    searchNote() {
       keepService.getNoteFromApi(this.noteName).then((notes) => {
         this.notes = notes
         console.log(notes)
