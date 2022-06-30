@@ -1,10 +1,10 @@
 export default {
   props: ['note'],
   template: `
-  <img  alt="">
-  <p>Id: {{note.id}}</p>
-  <p> type: {{note.type}}</p>
-  <p> infoTxt: {{note.info}}</p>
+  <div class="note" v-bind:style="note.style">
+    <div>{{note.info.title}}</div>
+    <div v-bind:style="{fontSize: 14 +'px'}">{{note.info.txt}}</div>
+  </div>
   `,
 
   data() {

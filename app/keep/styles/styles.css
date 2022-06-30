@@ -2,9 +2,12 @@
 
 /* BASE */
 
-
 /* COMPONENTS */
-@import "components/keep-app.css";
+@import 'components/keep-app.css';
 
 /* MEDIA QUERIES */
 /* @import 'mq/mq.css' */
+/* a {
+    color: #ffffff;
+} */
+

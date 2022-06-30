@@ -1,14 +1,16 @@
 export default {
   props: ['note'],
   template: `
-  <img  alt="">
-  <p>Id: {{note.id}}</p>
-  <p> type: {{note.type}}</p>
-  <p> infoTxt: {{note.info}}</p>
+  <div class="note" v-bind:style="note.style">
+    <div>{{note.info.title}}</div>
+    <img :src="note.info.src" alt="not rendering">
+  </div>
   `,
-
   data() {
     return {}
+  },
+  mounted() {
+    console.log(this.note.style)
   },
   methods: {},
   computed: {},

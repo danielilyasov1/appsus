@@ -61,28 +61,32 @@ function _createNotes() {
   let notes = utilService.loadFromStorage(NOTES_KEY)
   if (!notes || !notes.length) {
     const notes = []
-    notes.push(_createNote('n101', 'note-txt', { txt: 'Fullstack Me Baby!' }, true))
-    notes.push(_createNote('n102', 'note-img', { url: 'http://some-img/me', title: 'Bobi and Me' }, { backgroundColor: '#00d' }))
+    notes.push(_createNote('n101', 'note-txt', { txt: 'Fullstack Me Baby!', title: 'we will be legend' }, true))
+    notes.push(_createNote('n102', 'note-img', { src: '/app/keep/img/Appsus.png', title: 'Bobi and Me' }, false, { backgroundColor: '#ffffff' }))
     notes.push(
-      _createNote('n103', 'note-todos', { url: 'http://some-img/me', title: 'Bobi and Me' }, [
-        { txt: 'Driving liscence', doneAt: null },
-        { txt: 'Coding power', doneAt: 187111111 },
-      ])
+      _createNote('n103', 'note-todos', {
+        label: 'Get my stuff together',
+        todos: [
+          { txt: 'Driving liscence', doneAt: null },
+          { txt: 'Coding power', doneAt: 187111111 },
+        ],
+      })
     )
-    notes.push(_createNote('n104', 'note-video', { url: 'video', title: 'render video' }))
+    notes.push(_createNote('n104', 'note-video', { src: '/app/keep/videos/pexels-tima-miroshnichenko-5377684.mp4', title: 'hacker cracker' }))
     utilService.saveToStorage(NOTES_KEY, notes)
   }
   return notes
 }
 
-function _createNote(id, type, info, isPinned, style) {
-  const note = { id, type, info }
-  if (type === 'note-txt') {
-    note.isPinned = isPinned
+function _createNote(id, type, info, isPinned = false, style = { backgroundColor: '#ffffff' }) {
+  const note = {
+    id,
+    type,
+    info,
+    isPinned,
+    style,
   }
-  if (type === 'note-img') {
-    note.style = style
-  }
+
   return note
 }
 
