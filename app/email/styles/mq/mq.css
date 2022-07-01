@@ -23,7 +23,7 @@
   .email-preview-container {
     margin-top: 0;
     display: flex;
-    height: 8rem;
+    height: 7rem;
   }
 
   .email-preview-container-section{
@@ -50,8 +50,8 @@
     margin-bottom: auto;
     margin-right: 8vw;
     margin-left: 1vw;
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
 
   .side-bar {

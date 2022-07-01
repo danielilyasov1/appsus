@@ -42,7 +42,8 @@ h3 {
 body {
   margin-bottom: 40px;
   /* text-align: center; */
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: whitesmoke;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* app-header, app-footer */
@@ -63,12 +64,18 @@ body {
   margin: 30px;
   text-align: left;
 }
-.googleBook button{
+
+.googleBook input {
+  height: 25px;
+}
+
+.googleBook button {
+  height: 25px;
   cursor: pointer;
 }
 
 .googleBook li button {
-  background-color: rgb(248, 207, 214);
+  background-color: #e6ccf8;
   border-radius: 100px;
   border: #c396e4;
   padding: 5px;
@@ -111,7 +118,7 @@ body {
   text-align: center;
   align-items: center;
   gap: 2px;
-  border: 3px groove rgb(246, 231, 212);
+  border: 3px groove #c396e4;
   border-radius: 10px;
 }
 
@@ -120,11 +127,11 @@ body {
   width: 120px;
 }
 
-.actions button{
+.actions button {
   margin-right: 20px;
   width: 25px;
   border-radius: 5px;
-  border: 2px groove rgb(246, 231, 212);
+  border: 2px groove #c396e4;
   cursor: pointer;
 }
 
@@ -132,7 +139,7 @@ body {
 .book-details {
   background-color: #c396e4;
   padding: 20px;
-  height: auto;
+  height: 100%;
   display: flex;
   justify-content: center;
 }
@@ -150,7 +157,7 @@ body {
 .head-dateils button {
   margin-left: 1.2rem;
   border-radius: 50px;
-    font-size: larger;
+  font-size: larger;
 }
 
 .btn1 {
@@ -177,6 +184,15 @@ body {
   padding-left: 30px;
 }
 
+.filter-books input {
+  height: 25px;
+}
+
+.range {
+  position: absolute;
+  background-color: aqua;
+}
+
 /* about page */
 .about-page {
   background-color: #f8cfd6;
@@ -191,6 +207,9 @@ body {
 @media screen and (max-width: 673px) {
   .filter-books {
     text-align: center;
+  }
+  .range-con {
+    margin-left: -8rem;
   }
   .book-preview-container {
     width: 10em;
@@ -217,9 +236,9 @@ body {
     margin-top: 20px;
     margin-left: 30px;
   }
-  .head-dateils h4{
+  .head-dateils h4 {
     margin-left: 30px;
-    font-size:x-large;
+    font-size: x-large;
   }
 
   .head-dateils button {

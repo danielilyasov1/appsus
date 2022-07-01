@@ -4,9 +4,9 @@ export default {
     <section class="filter-books" >
     Search:
 	<input type="text" v-model="filterBy.title" @input="filter" placeholder='Enter book name..'>
-    <p>Min price:
-	<input type="range" v-model="filterBy.price" @input="filter" :min="minPrice" :max="maxPrice"  v-model.number="filterBy.price">
-    {{filterBy.price}}</p>
+    <div class='range-con'>Min price: {{filterBy.price}}
+	  <input class='range' type="range" v-model="filterBy.price" @input="filter" :min="minPrice" :max="maxPrice"  v-model.number="filterBy.price">
+    </div>
     </section>
   `,
   data() {

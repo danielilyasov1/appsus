@@ -3,6 +3,7 @@
 }
 
 .email-details{
-    background-color: aquamarine;
-    /* z-index: 2; */
+    background-color: #97cae8;
+    border: 2px solid rgb(171, 171, 171);
+    z-index: 2;
 }

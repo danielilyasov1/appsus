@@ -1,0 +1,19 @@
+.hero{
+    background-color: #545454;
+    height: 87vh;
+}
+
+.hero h1{
+    font-size: 5rem;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.img-con{
+    display: flex;
+    justify-content: center;
+}
+
+.hero img{
+    width: 50rem;
+}
