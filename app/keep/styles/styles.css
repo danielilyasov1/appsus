@@ -4,10 +4,9 @@
 
 /* COMPONENTS */
 @import 'components/keep-app.css';
-
-/* MEDIA QUERIES */
+@import 'components/keep-type.css';
+@import 'components/keep.css'; /* MEDIA QUERIES */
 /* @import 'mq/mq.css' */
 /* a {
     color: #ffffff;
 } */
-

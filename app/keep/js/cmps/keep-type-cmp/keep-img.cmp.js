@@ -2,7 +2,7 @@ export default {
   props: ['note'],
   template: `
   <div class="note" v-bind:style="note.style">
-    <div>{{note.info.title}}</div>
+    <div class="keep-title">{{note.info.title}}</div>
     <img :src="note.info.src" alt="not rendering">
   </div>
   `,

@@ -1,3 +1,33 @@
-.note-background {
-  background-color: dark;
+.note-list {
+}
+
+.grid-keep {
+  margin-inline-start: 75px;
+}
+.grid-item {
+  width: 300px;
+
+  margin: 0 0.6rem 0.7rem 0;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.674);
+  background-color: white;
+}
+
+.grid-item:hover {
+  box-shadow: 0 1px 5px rgba(128, 128, 128, 0.674);
+  transition: 0.1s;
+}
+
+.grid-item img {
+  width: 150px;
+  height: 150px;
+}
+
+.keep-title {
+  font-size: 2rem;
+}
+.keep-text {
+  font-size: 1.5rem;
 }

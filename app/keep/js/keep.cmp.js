@@ -2,7 +2,7 @@ import keepApp from './views/keep-app.cmp.js'
 
 export default {
   template: `
-  <section>
+  <section class="keep-app">
    <keep-app />
   </section>
 `,

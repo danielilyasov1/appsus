@@ -1,5 +1,5 @@
 header {
-  background-color: #545454;
+  background-color: whitesmoke;
   z-index: 1;
   width: 100%;
   /* position: fixed; */
@@ -24,7 +24,7 @@ ul,
   text-decoration: none;
 }
 
-li {
+.navigation li {
   text-transform: uppercase;
   padding: 16px;
   margin-left: 16px;

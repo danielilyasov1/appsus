@@ -2,11 +2,11 @@ export default {
   props: ['note'],
   template: `
   <div class="note" v-bind:style="note.style">
-    <div>{{note.info.label}}</div>
+    <div class="keep-title">{{note.info.label}}</div>
     <ul>
-      <li v-for="todo in note.info.todos" v-bind:style="{fontSize: 14 +'px'}">
+      <li v-for="todo in note.info.todos"  class="keep-text">
         {{todo.txt}}
-        <span v-bind:style="{fontSize: 14 +'px'}">{{doneAt(todo.doneAt)}}</span>
+        <span>{{doneAt(todo.doneAt)}}</span>
       </li>
     </ul>
   </div>

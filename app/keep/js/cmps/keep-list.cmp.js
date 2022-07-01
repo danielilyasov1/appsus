@@ -5,22 +5,23 @@ import noteVideo from './keep-type-cmp/keep-video.cmp.js'
 import noteAudio from './keep-type-cmp/keep-audio.cmp.js'
 import noteCanvas from './keep-type-cmp/keep-canvas.cmp.js'
 import noteMap from './keep-type-cmp/keep-map.cmp.js'
+// import Masonry from 'masonry-layout'
 
 export default {
   props: ['notes'],
   template: `
- <section v-if="notes" class="note-list">
-        <ul>
-            <li v-for="(note,idx) in notes" :key="note.id" class="note-preview-container">
-                <component :is="note.type" :note="note"></component>
-                <div class="actions">
-                    <button @click="remove(note.id)">X</button>
-                    <router-link :to="'/keep/'+note.id" class='detailsK'>Details</router-link>
-                    <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
-                </div>
-            </li>
-        </ul>
-    </section>
+<section class="note-list">
+<div ref="gridKeep" class="grid-keep">
+  <div v-for="(note,idx) in notes" :key="note.id" class="grid-item">
+      <component  :is="note.type" :note="note"></component>
+      <div class="actions">
+        <button @click="remove(note.id)">X</button>
+        <router-link :to="'/keep/'+note.id" class='detailsK'>Details</router-link>
+        <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
+      </div>
+  </div>
+  </div>
+</section>
 `,
   components: {
     noteTxt,
@@ -34,6 +35,19 @@ export default {
 
   data() {
     return {}
+  },
+  mounted() {
+    setTimeout(() => {
+      var elem = this.$refs.gridKeep
+      console.log(elem)
+      var msnry = new Masonry(elem, {
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 10,
+      })
+    })
+
+    // console.log(msnry)
   },
   methods: {
     remove(noteId) {
