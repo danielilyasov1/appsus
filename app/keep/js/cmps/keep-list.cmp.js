@@ -5,7 +5,7 @@ import noteVideo from './keep-type-cmp/keep-video.cmp.js'
 import noteAudio from './keep-type-cmp/keep-audio.cmp.js'
 import noteCanvas from './keep-type-cmp/keep-canvas.cmp.js'
 import noteMap from './keep-type-cmp/keep-map.cmp.js'
-// import Masonry from 'masonry-layout'
+import { keepService } from '../services/keep-service.js'
 
 export default {
   props: ['notes'],
@@ -16,6 +16,7 @@ export default {
       <component  :is="note.type" :note="note"></component>
       <div class="actions">
         <button @click="remove(note.id)">X</button>
+        <button @click="duplicate(note)">duplicate</button>
         <router-link :to="'/keep/'+note.id" class='detailsK'>Details</router-link>
         <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
       </div>
@@ -55,6 +56,9 @@ export default {
     },
     select(note) {
       this.$emit('selected', note)
+    },
+    duplicate(note) {
+      keepService.addDuplicatedKeep(note).then((note) => this.$emit('renderDuplicatedNote', note))
     },
   },
   computed: {},

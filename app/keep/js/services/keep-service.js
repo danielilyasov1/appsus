@@ -1,4 +1,4 @@
-import { utilService } from './util-service.js'
+import { utilService } from '../../../../js/service/util-service.js'
 import { storageService } from './async-storage-service.js'
 
 const NOTES_KEY = 'motes'
@@ -12,6 +12,12 @@ export const keepService = {
   get,
   getNextNoteId,
   addNote,
+  addDuplicatedKeep,
+}
+
+function addDuplicatedKeep(note) {
+  const duplicatedNote = _createNote('', note.type, note.info, note.isPinned, note.style)
+  return storageService.post(NOTES_KEY, duplicatedNote)
 }
 
 function addNote(note) {
