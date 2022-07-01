@@ -55,7 +55,7 @@ export default {
       this.selectedNote = note
     },
     renderNote(newNote) {
-      this.notes.push(newNote)
+      this.notes.splice(0, 0, newNote)
     },
     filterNote(filterBy) {
       this.filterBy = filterBy

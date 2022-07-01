@@ -3,6 +3,7 @@
 /* BASE */
 
 /* COMPONENTS */
+@import 'components/keep-list.css';
 @import 'components/keep-app.css';
 @import 'components/keep-type.css';
 @import 'components/keep.css'; /* MEDIA QUERIES */

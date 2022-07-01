@@ -6,23 +6,24 @@ import noteAudio from './keep-type-cmp/keep-audio.cmp.js'
 import noteCanvas from './keep-type-cmp/keep-canvas.cmp.js'
 import noteMap from './keep-type-cmp/keep-map.cmp.js'
 import { keepService } from '../services/keep-service.js'
+// import { ref } from '../../../../lib/vue.js'
 
 export default {
   props: ['notes'],
   template: `
-<section class="note-list">
-<div ref="gridKeep" class="grid-keep">
-  <div v-for="(note,idx) in notes" :key="note.id" class="grid-item">
-      <component  :is="note.type" :note="note"></component>
-      <div class="actions">
-        <button @click="remove(note.id)">X</button>
-        <button @click="duplicate(note)">duplicate</button>
-        <router-link :to="'/keep/'+note.id" class='detailsK'>Details</router-link>
-        <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
+    <section class="note-list">
+      <div class="grid">
+        <div v-for="(note,idx) in notes" :key="note.id" class="grid-item">
+            <component  :is="note.type" :note="note"></component>
+            <div class="actions">
+              <button @click="remove(note.id)">X</button>
+              <button @click="duplicate(note)">duplicate</button>
+              <router-link :to="'/keep/'+note.id" class='detailsK'>Details</router-link>
+              <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
+            </div>
+        </div>
       </div>
-  </div>
-  </div>
-</section>
+    </section>
 `,
   components: {
     noteTxt,
@@ -33,7 +34,6 @@ export default {
     noteCanvas,
     noteMap,
   },
-
   data() {
     return {}
   },
@@ -43,11 +43,15 @@ export default {
   methods: {
     renderMasonryLayout() {
       setTimeout(() => {
-        var elem = this.$refs.gridKeep
-        console.log(elem)
-        var msnry = new Masonry(elem, {
+        var pckry = new Packery('.grid', {
           itemSelector: '.grid-item',
-          columnWidth: 10,
+          transitionDuration: '0.2s',
+          columnWidth: 315,
+          rowHeight: 23,
+        })
+        pckry.getItemElements().forEach(function (itemElem) {
+          var draggie = new Draggabilly(itemElem)
+          pckry.bindDraggabillyEvents(draggie)
         })
       })
     },
