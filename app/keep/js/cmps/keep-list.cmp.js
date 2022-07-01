@@ -38,19 +38,19 @@ export default {
     return {}
   },
   mounted() {
-    setTimeout(() => {
-      var elem = this.$refs.gridKeep
-      console.log(elem)
-      var msnry = new Masonry(elem, {
-        // options
-        itemSelector: '.grid-item',
-        columnWidth: 10,
-      })
-    })
-
-    // console.log(msnry)
+    this.renderMasonryLayout()
   },
   methods: {
+    renderMasonryLayout() {
+      setTimeout(() => {
+        var elem = this.$refs.gridKeep
+        console.log(elem)
+        var msnry = new Masonry(elem, {
+          itemSelector: '.grid-item',
+          columnWidth: 10,
+        })
+      })
+    },
     remove(noteId) {
       this.$emit('removed', noteId)
     },
@@ -59,6 +59,7 @@ export default {
     },
     duplicate(note) {
       keepService.addDuplicatedKeep(note).then((note) => this.$emit('renderDuplicatedNote', note))
+      this.renderMasonryLayout()
     },
   },
   computed: {},
