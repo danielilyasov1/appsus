@@ -28,7 +28,7 @@ export default {
   created() {},
   methods: {
     filter() {
-      this.$emit('filtered', JSON.parse(JSON.stringify(this.filterBy)))
+      this.$emit('filtered', this.filterBy)
       // JSON.parse(JSON.stringify(this.filterBy))
     },
   },

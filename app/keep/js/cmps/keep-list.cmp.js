@@ -55,8 +55,7 @@ export default {
     }
   },
   created() {},
-  mounted() {
-  },
+  mounted() {},
   methods: {
     openModal(note) {
       this.$router.push(`/keep/${note.id}`)
@@ -71,7 +70,6 @@ export default {
         this.renderPackeryPinnedNotes()
         this.isPinnedGridLayoutEmpty()
         this.isGridLayoutEmpty()
-        console.log(this.notes)
       })
     },
     isPinnedGridLayoutEmpty() {
