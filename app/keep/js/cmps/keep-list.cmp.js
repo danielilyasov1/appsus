@@ -18,6 +18,7 @@ export default {
             <div class="actions">
               <button @click="remove(pinnedNote.id)">X</button>
               <button @click="duplicate(pinnedNote)">duplicate</button>
+              <button @click="tooglePinned(pinnedNote)">P</button>
               <router-link :to="'/keep/'+pinnedNote.id" class='detailsK'>Details</router-link>
               <!-- <router-link :to="'/keep/edit/'+pinnedNote.id">Edit</router-link> -->
             </div>
@@ -29,6 +30,7 @@ export default {
             <div class="actions">
               <button @click="remove(note.id)">X</button>
               <button @click="duplicate(note)">duplicate</button>
+              <button @click="tooglePinned(note)">P</button>
               <router-link :to="'/keep/'+note.id" class='detailsK'>Details</router-link>
               <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
             </div>
@@ -93,6 +95,11 @@ export default {
           pckry.bindDraggabillyEvents(draggie)
         })
       })
+    },
+    tooglePinned(note) {
+      note.isPinned = !note.isPinned
+      keepService.save(note).then((note) => this.renderPackeryLayout())
+      // this.$emit('renderDuplicatedNote', note)
     },
     remove(noteId) {
       this.$emit('removed', noteId)
