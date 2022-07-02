@@ -3,8 +3,10 @@ export default {
   props: ['note'],
   template: `
   <div class="note" v-bind:style="note.style">
+  <div class="writing-container">
     <div contenteditable class="keep-title" @blur="onEditTitle">{{note.info.title}}</div>
     <div contenteditable class="keep-text" @blur="onEditText">{{note.info.txt}}</div>
+  </div>
   </div>
   `,
 

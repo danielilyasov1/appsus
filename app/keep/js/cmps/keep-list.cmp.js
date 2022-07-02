@@ -15,13 +15,11 @@ export default {
     <div  v-if="shouldShowPinnedGridName" class="pinned-grid-name">Pinned</div>
     <div class="grid-pinned" ref="gridPinned">
         <div v-for="(pinnedNote,idx) in pinnedNotes" :key="pinnedNote.id" class="grid-pinned-item">
-        <router-link :to="'/keep/'+pinnedNote.id" class='detailsE'> <component  :is="pinnedNote.type" :note="pinnedNote"></component></router-link>
+        <router-link :to="'/keep/'+pinnedNote.id" class='detailsK'> <component  :is="pinnedNote.type" :note="pinnedNote"></component></router-link>
             <div class="actions">
               <button @click="remove(pinnedNote.id)">X</button>
               <button @click="duplicate(pinnedNote)">duplicate</button>
               <button @click="tooglePinned(pinnedNote)">P</button>
-              <router-link :to="'/keep/'+pinnedNote.id" class='detailsK'>Details</router-link>
-              <!-- <router-link :to="'/keep/edit/'+pinnedNote.id">Edit</router-link> -->
             </div>
             </div>
       </div>
@@ -33,8 +31,6 @@ export default {
               <button @click="remove(note.id)">X</button>
               <button @click="duplicate(note)">duplicate</button>
               <button @click="tooglePinned(note)">P</button>
-              <router-link :to="'/keep/'+note.id" class='detailsK'>Details</router-link>
-              <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
             </div>
         </div>
       </div>

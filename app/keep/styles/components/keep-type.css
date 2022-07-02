@@ -20,6 +20,12 @@
   height: 220px;
 }
 
-.writing-container {
+.keep-title {
+  margin: 6px;
+  padding: 10px;
+}
+
+.keep-text {
+  margin: 6px;
   padding: 10px;
 }

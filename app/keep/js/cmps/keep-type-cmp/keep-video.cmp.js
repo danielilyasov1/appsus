@@ -1,15 +1,28 @@
+import { keepService } from '../../services/keep-service.js'
 export default {
   props: ['note'],
   template: `
   <div  v-bind:style="note.style">
-  <div class="keep-title">{{note.info.title}}</div>
-          <iframe :src="note.info.src" width="250"></iframe>
+    <iframe :src="note.info.src" width="298.4"></iframe>
+    <div class="writing-container">
+      <div contenteditable class="keep-title" @blur="onEditTitle">{{note.info.title}}</div>
+      <div contenteditable class="keep-text" @blur="onEditText">{{note.info.txt}}</div>
+    </div>
   </div>
   `,
 
   data() {
     return {}
   },
-  methods: {},
+  methods: {
+    onEditTitle(event) {
+      this.note.info.title = event.target.innerText
+      keepService.save(this.note)
+    },
+    onEditText(event) {
+      this.note.info.txt = event.target.innerText
+      keepService.save(this.note)
+    },
+  },
   computed: {},
 }
