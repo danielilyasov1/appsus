@@ -12,8 +12,19 @@ export default {
   props: ['notes'],
   template: `
     <section class="note-list">
+    <div class="grid-pinned">
+        <div v-for="(pinnedNote,idx) in pinnedNotes" :key="pinnedNote.id" class="grid-pinned-item">
+            <component  :is="pinnedNote.type" :note="pinnedNote"></component>
+            <div class="actions">
+              <button @click="remove(pinnedNote.id)">X</button>
+              <button @click="duplicate(pinnedNote)">duplicate</button>
+              <router-link :to="'/keep/'+pinnedNote.id" class='detailsK'>Details</router-link>
+              <!-- <router-link :to="'/keep/edit/'+pinnedNote.id">Edit</router-link> -->
+            </div>
+            </div>
+      </div>
       <div class="grid">
-        <div v-for="(note,idx) in notes" :key="note.id" class="grid-item">
+        <div v-for="(note,idx) in this.unPinnedNotes" :key="note.id" class="grid-item">
             <component  :is="note.type" :note="note"></component>
             <div class="actions">
               <button @click="remove(note.id)">X</button>
@@ -35,13 +46,41 @@ export default {
     noteMap,
   },
   data() {
-    return {}
+    return {
+      pinnedNotes: '',
+      unPinnedNotes: '',
+    }
   },
+  created() {},
   mounted() {
-    this.renderMasonryLayout()
+    this.renderPackeryLayout()
   },
   methods: {
-    renderMasonryLayout() {
+    renderPackeryLayout() {
+      setTimeout(() => {
+        const _pinnedNotes = this.notes.filter((note) => note.isPinned === true)
+        this.pinnedNotes = _pinnedNotes
+        const _notes = this.notes.filter((note) => note.isPinned === false)
+        this.unPinnedNotes = _notes
+        this.renderPackeryUnpinnedNotes()
+        this.renderPackeryPinnedNotes()
+      })
+    },
+    renderPackeryPinnedNotes() {
+      setTimeout(() => {
+        var pckry = new Packery('.grid-pinned', {
+          itemSelector: '.grid-pinned-item',
+          transitionDuration: '0.2s',
+          columnWidth: 315,
+          rowHeight: 23,
+        })
+        pckry.getItemElements().forEach(function (itemElem) {
+          var draggie = new Draggabilly(itemElem)
+          pckry.bindDraggabillyEvents(draggie)
+        })
+      })
+    },
+    renderPackeryUnpinnedNotes() {
       setTimeout(() => {
         var pckry = new Packery('.grid', {
           itemSelector: '.grid-item',
@@ -57,13 +96,14 @@ export default {
     },
     remove(noteId) {
       this.$emit('removed', noteId)
+      this.renderPackeryLayout()
     },
     select(note) {
       this.$emit('selected', note)
     },
     duplicate(note) {
       keepService.addDuplicatedKeep(note).then((note) => this.$emit('renderDuplicatedNote', note))
-      this.renderMasonryLayout()
+      this.renderPackeryLayout()
     },
   },
   computed: {},

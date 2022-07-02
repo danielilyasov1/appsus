@@ -67,23 +67,18 @@ function _createNotes() {
   let notes = utilService.loadFromStorage(NOTES_KEY)
   if (!notes || !notes.length) {
     const notes = []
-    notes.push(_createNote('n101', 'note-txt', { txt: 'Fullstack Me Baby!', title: 'we will be legend' }, true, 1))
-    notes.push(_createNote('n102', 'note-img', { src: '/app/keep/img/Appsus.png', title: 'Bobi and Me' }, false, { backgroundColor: '#ffffff' }, 1))
+    notes.push(_createNote('n101', 'note-txt', { txt: 'Fullstack Me Baby!', title: 'we will be legend' }, true))
+    notes.push(_createNote('n102', 'note-img', { src: 'app/keep/img/Appsus.png', title: 'Bobi and Me' }, false, { backgroundColor: '#ffffff' }))
     notes.push(
-      _createNote(
-        'n103',
-        'note-todos',
-        {
-          label: 'Get my stuff together',
-          todos: [
-            { txt: 'Driving liscence', doneAt: null },
-            { txt: 'Coding power', doneAt: 187111111 },
-          ],
-        },
-        2
-      )
+      _createNote('n103', 'note-todos', {
+        label: 'Get my stuff together',
+        todos: [
+          { txt: 'Driving liscence', doneAt: null },
+          { txt: 'Coding power', doneAt: 187111111 },
+        ],
+      })
     )
-    notes.push(_createNote('n104', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }, 2))
+    notes.push(_createNote('n104', 'note-video', { src: 'app/keep/videos/pexels-tima-miroshnichenko-5377684.mp4', title: 'hacker cracker' }))
     // notes.push(_createNote('n105', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
     // notes.push(_createNote('n106', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
     // notes.push(_createNote('n107', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
@@ -100,14 +95,13 @@ function _createNotes() {
   return notes
 }
 
-function _createNote(id, type, info, isPinned = false, style = { backgroundColor: '#ffffff' }, list = 2) {
+function _createNote(id, type, info, isPinned = false, style = { backgroundColor: '#ffffff' }) {
   const note = {
     id,
     type,
     info,
     isPinned,
     style,
-    list,
   }
 
   return note
