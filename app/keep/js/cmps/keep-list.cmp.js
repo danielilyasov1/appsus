@@ -16,10 +16,10 @@ export default {
     <div class="grid-pinned" ref="gridPinned">
         <div v-for="(pinnedNote,idx) in pinnedNotes" :key="pinnedNote.id" class="grid-pinned-item">
         <router-link :to="'/keep/'+pinnedNote.id" class='detailsK'> <component  :is="pinnedNote.type" :note="pinnedNote"></component></router-link>
-            <div class="actions">
-              <button @click="remove(pinnedNote.id)">X</button>
-              <button @click="duplicate(pinnedNote)">duplicate</button>
-              <button @click="tooglePinned(pinnedNote)">P</button>
+            <div class="actions-keep">
+              <button @click="remove(pinnedNote.id)"><i class="fa-solid fa-trash-can"></i></button>
+              <button @click="duplicate(pinnedNote)"><i class="fa-solid fa-clone"></i></button>
+              <button @click="tooglePinned(pinnedNote)"><i class="fa-solid fa-thumbtack"></i></button>
             </div>
             </div>
       </div>
@@ -27,10 +27,10 @@ export default {
       <div class="grid" ref="grid">
         <div v-for="(note,idx) in this.unPinnedNotes" :key="note.id" class="grid-item">
         <router-link :to="'/keep/'+note.id" class='detailsK'> <component  :is="note.type" :note="note"></component> </router-link>
-            <div class="actions">
-              <button @click="remove(note.id)">X</button>
-              <button @click="duplicate(note)">duplicate</button>
-              <button @click="tooglePinned(note)">P</button>
+            <div class="actions-keep">
+              <button @click="remove(note.id)"><i class="fa-solid fa-trash-can"></i></button>
+              <button @click="duplicate(note)"><i class="fa-solid fa-clone"></i></button>
+              <button @click="tooglePinned(note)"><i class="fa-solid fa-thumbtack"></i></button>
             </div>
         </div>
       </div>

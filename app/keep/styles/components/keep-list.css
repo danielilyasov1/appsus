@@ -108,3 +108,24 @@
   text-decoration: none;
   text-transform: none;
 }
+
+.actions-keep {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.actions-keep button {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.actions-keep button:hover {
+  background-color: rgba(164, 163, 163, 0.821);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
