@@ -1,0 +1,29 @@
+
+.new-email{
+
+    background-color: rgba(0,0,0,.5);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 6;
+}
+
+.email-form{
+  position: absolute;
+  bottom: 0;
+  /* right: auto;
+  left: 50em;
+  margin-bottom: 10rem; */
+  background-color: #97cae8;
+  border: 2px solid rgb(171, 171, 171);
+  background-color: rgb(200, 221, 230);
+
+  float: right;
+}
+
+.delete{
+  float: right;
+  margin-top: -2em;
+}

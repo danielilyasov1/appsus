@@ -1,9 +1,20 @@
-.sub-email{
-    padding-right: 5px;
+.sub-email {
+  padding-right: 5px;
 }
 
-.email-details{
-    background-color: #97cae8;
-    border: 2px solid rgb(171, 171, 171);
-    z-index: 2;
+.email-details {
+  background-color: #97cae8;
+  border: 2px solid rgb(171, 171, 171);
+  z-index: 2;
+}
+
+.detailsE {
+  position: relative;
+  color: black;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.detailsE > * {
+  margin-inline-end: 0.5rem;
 }

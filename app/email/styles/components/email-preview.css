@@ -49,17 +49,6 @@
   display: block;
 }
 
-.detailsE {
-  position: relative;
-  color: black;
-  text-decoration: none;
-  text-transform: none;
-}
-
-.detailsE > * {
-  margin-inline-end: 0.5rem;
-}
-
 .text-body {
   /* display: flex; */
   /* margin-right: 10rem; */
@@ -71,4 +60,8 @@
 
 .img-user {
   display: none;
+}
+
+.read-mail{
+  font-weight: normal;
 }

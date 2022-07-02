@@ -65,6 +65,7 @@ function _createEmails() {
         sentAt: 1551133930594,
         to: "dor@momo.com",
         name: "Dor",
+        state: 'all',
       },
       {
         id: "e102",
@@ -74,6 +75,8 @@ function _createEmails() {
         sentAt: 1551133930594,
         to: "daniel@momo.com",
         name: "Daniel",
+        state: 'all',
+
       },
       {
         id: "e103",
@@ -83,6 +86,8 @@ function _createEmails() {
         sentAt: 1551133930594,
         to: "momo@momo.com",
         name: "Momo",
+        state: 'all',
+
       },
     ]
     utilService.saveToStorage(MAILS_KEY, emails)
