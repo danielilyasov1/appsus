@@ -17,11 +17,13 @@ export default {
           <div class="modal-wrapper">
             <div class="modal-container">
               <component  :is="note.type" :note="note" ></component>
-              <button @click="remove(note.id)">X</button>
-              <button @click="duplicate(note)">duplicate</button>
-              <button @click="tooglePinned(note)">P</button>
-              <router-link :to="'/keep/' + nextnoteId">Next note</router-link>
-              <button @click='clickBack'>Back</button>
+              <div class="actions-keep">
+                <button @click="remove(note.id)"><i class="fa-solid fa-trash-can"></i></button>
+                <button @click="duplicate(note)"><i class="fa-solid fa-clone"></i></button>
+                <button @click="tooglePinned(note)"><i class="fa-solid fa-thumbtack"></i></button>
+                <button @click='clickBack'><i class="fa-solid fa-angles-left"></i></button>
+                <button @click='nextNote'><i class="fa-solid fa-angles-right"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -51,6 +53,9 @@ export default {
     keepService.get(id).then((note) => (this.note = note))
   },
   methods: {
+    nextNote() {
+      this.$router.push(`/keep/${this.nextnoteId}`)
+    },
     tooglePinned(note) {
       note.isPinned = !note.isPinned
       keepService.save(note)
