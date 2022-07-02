@@ -14,7 +14,7 @@ export default {
     <section class="note-list">
     <div class="grid-pinned">
         <div v-for="(pinnedNote,idx) in pinnedNotes" :key="pinnedNote.id" class="grid-pinned-item">
-            <component  :is="pinnedNote.type" :note="pinnedNote"></component>
+        <router-link :to="'/keep/'+pinnedNote.id" class='detailsE'> <component  :is="pinnedNote.type" :note="pinnedNote"></component></router-link>
             <div class="actions">
               <button @click="remove(pinnedNote.id)">X</button>
               <button @click="duplicate(pinnedNote)">duplicate</button>
@@ -98,7 +98,7 @@ export default {
     },
     tooglePinned(note) {
       note.isPinned = !note.isPinned
-      keepService.save(note).then((note) => this.renderPackeryLayout())
+      keepService.save(note).then(() => this.renderPackeryLayout())
       // this.$emit('renderDuplicatedNote', note)
     },
     remove(noteId) {
