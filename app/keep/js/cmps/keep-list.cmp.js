@@ -12,7 +12,8 @@ export default {
   props: ['notes'],
   template: `
     <section class="note-list">
-    <div class="grid-pinned">
+    <div  v-if="shouldShowPinnedGridName" class="pinned-grid-name">Pinned</div>
+    <div class="grid-pinned" ref="gridPinned">
         <div v-for="(pinnedNote,idx) in pinnedNotes" :key="pinnedNote.id" class="grid-pinned-item">
         <router-link :to="'/keep/'+pinnedNote.id" class='detailsE'> <component  :is="pinnedNote.type" :note="pinnedNote"></component></router-link>
             <div class="actions">
@@ -24,9 +25,10 @@ export default {
             </div>
             </div>
       </div>
-      <div class="grid">
+      <div  v-if="shouldShowGridName" class="grid-name">Others</div>
+      <div class="grid" ref="grid">
         <div v-for="(note,idx) in this.unPinnedNotes" :key="note.id" class="grid-item">
-        <router-link :to="'/keep/'+note.id" class='detailsE'> <component  :is="note.type" :note="note"></component> </router-link>
+        <router-link :to="'/keep/'+note.id" class='detailsK'> <component  :is="note.type" :note="note"></component> </router-link>
             <div class="actions">
               <button @click="remove(note.id)">X</button>
               <button @click="duplicate(note)">duplicate</button>
@@ -51,6 +53,8 @@ export default {
     return {
       pinnedNotes: '',
       unPinnedNotes: '',
+      shouldShowPinnedGridName: false,
+      shouldShowGridName: false,
     }
   },
   created() {},
@@ -66,6 +70,19 @@ export default {
         this.unPinnedNotes = _notes
         this.renderPackeryUnpinnedNotes()
         this.renderPackeryPinnedNotes()
+        this.isPinnedGridLayoutEmpty()
+        this.isGridLayoutEmpty()
+      })
+    },
+    isPinnedGridLayoutEmpty() {
+      setTimeout(() => {
+        this.$refs.gridPinned.childElementCount === 0 ? (this.shouldShowPinnedGridName = false) : (this.shouldShowPinnedGridName = true)
+      })
+    },
+    isGridLayoutEmpty() {
+      setTimeout(() => {
+        this.$refs.grid.childElementCount === 0 ? (this.shouldShowGridName = false) : (this.shouldShowGridName = true)
+        if (this.pinnedNotes[0] === undefined) this.shouldShowGridName = false
       })
     },
     renderPackeryPinnedNotes() {
@@ -74,7 +91,7 @@ export default {
           itemSelector: '.grid-pinned-item',
           transitionDuration: '0.2s',
           columnWidth: 315,
-          rowHeight: 23,
+          rowHeight: 53,
         })
         pckry.getItemElements().forEach(function (itemElem) {
           var draggie = new Draggabilly(itemElem)
@@ -88,7 +105,7 @@ export default {
           itemSelector: '.grid-item',
           transitionDuration: '0.2s',
           columnWidth: 315,
-          rowHeight: 23,
+          rowHeight: 53,
         })
         pckry.getItemElements().forEach(function (itemElem) {
           var draggie = new Draggabilly(itemElem)
