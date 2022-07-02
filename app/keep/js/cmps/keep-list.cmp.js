@@ -56,7 +56,6 @@ export default {
   },
   created() {},
   mounted() {
-    this.renderPackeryLayout()
   },
   methods: {
     openModal(note) {
@@ -72,6 +71,7 @@ export default {
         this.renderPackeryPinnedNotes()
         this.isPinnedGridLayoutEmpty()
         this.isGridLayoutEmpty()
+        console.log(this.notes)
       })
     },
     isPinnedGridLayoutEmpty() {
@@ -126,9 +126,14 @@ export default {
       this.$emit('selected', note)
     },
     duplicate(note) {
+      console.log(this.notes)
       keepService.addDuplicatedKeep(note).then((note) => this.$emit('renderDuplicatedNote', note))
       this.renderPackeryLayout()
     },
   },
-  computed: {},
+  watch: {
+    notes() {
+      this.renderPackeryLayout()
+    },
+  },
 }

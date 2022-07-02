@@ -9,7 +9,7 @@ export default {
    <section class="note-app">
     <keep-filter @filtered="filterNote" :notes="notes" v-if="notes"/>
     <keep-add class='google-note' />
-    <keep-list @removed="removeNote" @selected="selectNote" @renderDuplicatedNote="renderNote" :notes="notesToDisplay" />
+    <keep-list @removed="removeNote" @selected="selectNote" @renderDuplicatedNote="renderNote" :notes="notesToDisplay" :key="1"/>
    </section>
 
 `,
@@ -69,13 +69,6 @@ export default {
       if (this.filterBy.title === '') return this.notes.filter((note) => note.type === this.filterBy.type)
       if (this.filterBy.type === '') return this.notes.filter((note) => regexTitle.test(note.info.title))
       return this.notes.filter((note) => regexTitle.test(note.info.title) && note.type === this.filterBy.type)
-
-      // const regexType = new RegExp(this.filterBy.type, 'i')
-
-      // if (this.filterBy.type === '' && this.filterBy.title === '') return this.notes
-      // if (this.filterBy.title === '') return this.notes.filter((note) => note.type === this.filterBy.type)
-      // return this.notes.filter((note) => regexTitle.test(note.info.title) && note.type === this.filterBy.type)
-      // return this.notes.filter((note) => regex.test(note.title) && note.listPrice.amount >= this.filterBy.price)
     },
   },
   unmounted() {},
