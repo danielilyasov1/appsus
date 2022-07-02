@@ -26,7 +26,7 @@ export default {
       </div>
       <div class="grid">
         <div v-for="(note,idx) in this.unPinnedNotes" :key="note.id" class="grid-item">
-            <component  :is="note.type" :note="note"></component>
+        <router-link :to="'/keep/'+note.id" class='detailsE'> <component  :is="note.type" :note="note"></component> </router-link>
             <div class="actions">
               <button @click="remove(note.id)">X</button>
               <button @click="duplicate(note)">duplicate</button>

@@ -16,7 +16,7 @@ export default {
       this.note.info.title = event.target.innerText
       keepService.save(this.note)
     },
-    onEditText() {
+    onEditText(event) {
       this.note.info.txt = event.target.innerText
       keepService.save(this.note)
     },
