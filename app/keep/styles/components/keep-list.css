@@ -129,3 +129,8 @@
   cursor: pointer;
 }
 
+.detailsClick {
+  z-index: 100;
+  width: 300px;
+  height: 200px;
+}

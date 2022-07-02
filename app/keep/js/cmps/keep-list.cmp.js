@@ -15,7 +15,7 @@ export default {
     <div  v-if="shouldShowPinnedGridName" class="pinned-grid-name">Pinned</div>
     <div class="grid-pinned" ref="gridPinned">
         <div v-for="(pinnedNote,idx) in pinnedNotes" :key="pinnedNote.id" class="grid-pinned-item">
-        <router-link :to="'/keep/'+pinnedNote.id" class='detailsK'> <component  :is="pinnedNote.type" :note="pinnedNote"></component></router-link>
+      <div @dblclick="openModal(pinnedNote)"><component :is="pinnedNote.type" :note="pinnedNote"></component></div>
             <div class="actions-keep">
               <button @click="remove(pinnedNote.id)"><i class="fa-solid fa-trash-can"></i></button>
               <button @click="duplicate(pinnedNote)"><i class="fa-solid fa-clone"></i></button>
@@ -26,7 +26,7 @@ export default {
       <div  v-if="shouldShowGridName" class="grid-name">Others</div>
       <div class="grid" ref="grid">
         <div v-for="(note,idx) in this.unPinnedNotes" :key="note.id" class="grid-item">
-        <router-link :to="'/keep/'+note.id" class='detailsK'> <component  :is="note.type" :note="note"></component> </router-link>
+        <div @dblclick="openModal(note)"> <component  :is="note.type" :note="note"></component></div>
             <div class="actions-keep">
               <button @click="remove(note.id)"><i class="fa-solid fa-trash-can"></i></button>
               <button @click="duplicate(note)"><i class="fa-solid fa-clone"></i></button>
@@ -36,6 +36,7 @@ export default {
       </div>
     </section>
 `,
+  /* <router-link  :to="'/keep/'+pinnedNote.id" class='detailsK'> </router-link>*/
   components: {
     noteTxt,
     noteImg,
@@ -58,6 +59,9 @@ export default {
     this.renderPackeryLayout()
   },
   methods: {
+    openModal(note) {
+      this.$router.push(`/keep/${note.id}`)
+    },
     renderPackeryLayout() {
       setTimeout(() => {
         const _pinnedNotes = this.notes.filter((note) => note.isPinned === true)
