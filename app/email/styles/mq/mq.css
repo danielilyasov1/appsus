@@ -57,4 +57,7 @@
   .side-bar {
     display: none;
   }
+  .delete{
+    margin-top: 0;
+  }
 }

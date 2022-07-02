@@ -28,15 +28,25 @@
 }
 
 .email-compose{
+    display: flex;
     height: 3rem;
     font-size: larger;
     border-radius: 40px;
     margin-bottom: 2rem;
     border: 2px solid gray;
     cursor: pointer;
+    text-align: center;
     
 }
 
 .email-compose:hover{
     background-color: rgba(200, 199, 199, 0.574);
+}
+.email-compose .comp{
+    margin: auto;
+}
+
+.email-compose img{
+    margin: auto;
+    width: 1.5em;
 }

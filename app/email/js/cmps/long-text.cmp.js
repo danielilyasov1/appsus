@@ -14,7 +14,7 @@ export default {
     formatedText() {
       return this.isMore ? this.text : this.text.slice(0, 30)
     },
-
-    
   },
+  mounted(){
+  }
 }
