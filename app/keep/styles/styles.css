@@ -6,5 +6,7 @@
 @import 'components/keep-list.css';
 @import 'components/keep-app.css';
 @import 'components/keep-type.css';
-@import 'components/keep.css'; /* MEDIA QUERIES */
+@import 'components/keep.css';
+@import 'components/keep-details.css';
+/* MEDIA QUERIES */
 /* @import 'mq/mq.css' */

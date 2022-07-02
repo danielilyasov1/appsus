@@ -11,24 +11,24 @@ import { keepService } from '../services/keep-service.js'
 
 export default {
   template: `
-      <section v-if="note" class="note-details">
+    <section v-if="note" class="note-details">
       <transition name="modal">
         <div class="modal-mask">
           <div class="modal-wrapper">
             <div class="modal-container">
-      <component  :is="note.type" :note="note" ></component>
-          <button @click='nextnote'>next note</button>
-          <button @click="remove(pinnedNote.id)">X</button>
-          <button @click="duplicate(pinnedNote)">duplicate</button>
-          <button @click="tooglePinned(pinnedNote)">P</button>
-          <!-- <router-link :to="'/keep/' + nextnoteId">Next note</router-link> -->
-          <button @click='clickBack'>Back</button>
+              <component  :is="note.type" :note="note" ></component>
+              <button @click='nextnote'>next note</button>
+              <button @click="remove(pinnedNote.id)">X</button>
+              <button @click="duplicate(pinnedNote)">duplicate</button>
+              <button @click="tooglePinned(pinnedNote)">P</button>
+              <!-- <router-link :to="'/keep/' + nextnoteId">Next note</router-link> -->
+              <button @click='clickBack'>Back</button>
+            </div>
           </div>
-          </div>
-          </div>
-          </transition>
-      </section>
-      <div v-else>Loading...</div>
+        </div>
+      </transition>
+    </section>
+    <div v-else>Loading...</div>
   `,
   components: {
     longText,
