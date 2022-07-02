@@ -23,3 +23,8 @@
   margin: 6px;
   padding: 10px;
 }
+
+.todo-text {
+  display: inline;
+  margin-inline-start: 7px;
+}

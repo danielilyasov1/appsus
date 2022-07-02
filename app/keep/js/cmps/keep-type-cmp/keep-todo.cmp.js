@@ -6,9 +6,9 @@ export default {
     <div contenteditable @blur="onEditTitle" class="keep-title" >{{note.info.label}}</div>
     <ul>
       <li v-for="(todo,i) in note.info.todos"  class="keep-text">
-      <input type="checkbox" id="note.id" :checked="isCheacked(todo.doneAt)" @change="toogleCheck($event, i)">
-       <div contenteditable @blur="onEditText($event,i)" :class="{check:isCheacked(todo.doneAt), todo: !isCheacked(todo.doneAt)}" >{{todo.txt}}</div>
-        <span>{{doneAt(todo.doneAt)}}</span>
+      <input type="checkbox" id="note.id" class="checkbox-input" :checked="isCheacked(todo.doneAt)" @change="toogleCheck($event, i)">
+       <div contenteditable @blur="onEditText($event,i)" class="todo-text" :class="{check:isCheacked(todo.doneAt), todo: !isCheacked(todo.doneAt)}" >{{todo.txt}}</div>
+        <div>{{doneAt(todo.doneAt)}}</div>
       </li>
     </ul>
   </div>
