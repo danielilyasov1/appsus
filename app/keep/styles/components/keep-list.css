@@ -63,9 +63,8 @@
 }
 
 .grid-name {
-  position: absolute;
-  top: 490px;
-  left: 260px;
+  margin-inline-start: 260px;
+  margin-block-end: 10px;
   font-weight: 500;
   text-transform: uppercase;
   font-family: Roboto, Arial, sans-serif;
@@ -96,11 +95,6 @@
 .grid-pinned-item.is-dragging,
 .grid-pinned-item.is-positioning-post-drag {
   z-index: 2;
-}
-
-.ggrid-pinned-item img {
-  width: 150px;
-  height: 150px;
 }
 
 .keep-title {
