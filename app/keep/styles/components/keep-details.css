@@ -33,3 +33,16 @@
 .note {
   border-radius: 10px;
 }
+
+.note img {
+  border-radius: 10px 10px 0 0;
+}
+
+.note iframe {
+  border: none;
+  width: 100%;
+}
+
+.video {
+  border-radius: 10px 10px 0 0;
+}

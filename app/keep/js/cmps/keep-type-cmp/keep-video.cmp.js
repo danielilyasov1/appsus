@@ -2,8 +2,8 @@ import { keepService } from '../../services/keep-service.js'
 export default {
   props: ['note'],
   template: `
-  <div  v-bind:style="note.style">
-    <iframe :src="note.info.src" width="298.4"></iframe>
+  <div  class="note" v-bind:style="note.style">
+    <iframe class="video" :src="note.info.src" width="298.4"></iframe>
     <div class="writing-container">
       <div contenteditable class="keep-title" @blur="onEditTitle">{{note.info.title}}</div>
       <div contenteditable class="keep-text" @blur="onEditText">{{note.info.txt}}</div>
