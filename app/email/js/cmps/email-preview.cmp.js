@@ -1,16 +1,16 @@
 import longText from "../cmps/long-text.cmp.js"
 import emailDetails from "./../views/email-details.cmp.js"
-import { emailService } from "../services/email-service.js"
+// import { emailService } from "../services/email-service.js"
 
 export default {
   props: ["email"],
   template: `
     <section  v-on:click="shouldShow =!shouldShow"  class="email-preview-container-section is">
 
-    <span class='name-email'>{{name}}</span>
-    <span class='sub-email'>{{email.subject}}</span>
+    <span class='name-email' :class='unread'>{{name}}</span>
+    <span class='sub-email' :class='unread'>{{email.subject}}</span>
     <long-text :text='email.body'></long-text>
-    <span class='date-mail'>{{date}}</span>
+    <span class='date-mail' :class='unread'>{{date}}</span>
     
     <email-details :email='email' v-if='shouldShow' class='detailsE'></email-details>
   </section>
@@ -38,6 +38,9 @@ export default {
       if(this.email.name) return this.email.name
       const idx = this.email.to.indexOf("@")
       return this.email.to.slice(0, idx) 
+    },
+    unread() {
+      return {unread: (!this.email.isRead && this.email.state === 'unread')}
     },
     // isRead(){
     //   console.log('isRead',this.email.isRead)

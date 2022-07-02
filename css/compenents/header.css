@@ -1,5 +1,5 @@
 header {
-  background-color: white;
+  background-color: #535353;
   /* outline: 1px solid black; */
   box-shadow: inset 0 -1px 0 0 #898b90;
   z-index: 1;
@@ -27,6 +27,7 @@ ul,
   text-transform: uppercase;
   padding: 16px;
   margin-left: 16px;
+  
 }
 
 .link {
@@ -34,6 +35,8 @@ ul,
   transition: 0.5s ease all;
   padding-bottom: 4px;
   border-bottom: 1px solid transparent;
+  color: white;
+
 }
 
 .link:hover {
@@ -80,8 +83,8 @@ img {
 
 span {
   cursor: pointer;
-  font-size: 24px;
-  transition: 0.8s ease all;
+  /* font-size: 24px; */
+  /* transition: 0.8s ease all; */
 }
 
 .icon-active {
@@ -94,9 +97,10 @@ span {
   position: fixed;
   width: 100%;
   max-width: 200px;
+  height: 120px;
   background-color: #a9a9a9f4;
   border-radius: 20px;
-  padding: 5px;
+  padding: 10px;
   top: 110px;
   right: -30px;
   z-index: 2;
@@ -117,7 +121,8 @@ span {
 }
 
 .dropdown-nav li {
-  margin-left: 0;
+  margin-left: 10px;
+  margin-bottom: 7px;
 }
 
 .dropdown-nav li .link {

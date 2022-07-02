@@ -1,5 +1,4 @@
 import emailPreview from "./email-preview.cmp.js"
-// import emailDetails from "./../views/email-details.cmp.js"
 
 export default {
   props: ["emails"],
@@ -10,11 +9,8 @@ export default {
             <img class='img-user' src='app/email/img/user-img.png'/>
             <div class='mail'>
               <email-preview :email="email"/>
-              <!-- <router-link :to="'/email/'+email.id" class='detailsE'>    
-                </router-link> -->
-                <!-- <email-details :email='email' v-if='email.id' class='detailsE'></email-details> -->
-              </div>  
-            </li>
+            </div>  
+        </li>
     </ul>
   </section>
 `,

@@ -5,6 +5,7 @@
 
 .email-container {
   display: flex;
+  /* width: 80vw; */
 }
 
 .side-bar {

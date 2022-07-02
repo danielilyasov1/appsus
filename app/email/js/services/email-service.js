@@ -65,7 +65,7 @@ function _createEmails() {
         sentAt: 1551133930594,
         to: "dor@momo.com",
         name: "Dor",
-        state: 'all',
+        state: 'inbox',
       },
       {
         id: "e102",
@@ -75,7 +75,7 @@ function _createEmails() {
         sentAt: 1551133930594,
         to: "daniel@momo.com",
         name: "Daniel",
-        state: 'all',
+        state: 'inbox',
 
       },
       {
@@ -86,7 +86,18 @@ function _createEmails() {
         sentAt: 1551133930594,
         to: "momo@momo.com",
         name: "Momo",
-        state: 'all',
+        state: 'inbox',
+
+      },
+      {
+        id: "e105",
+        subject: "Miss you!",
+        body: "Would love to catch up sometimes",
+        isRead: false,
+        sentAt: 1551133930594,
+        to: "momo@momo.com",
+        name: "Momo2",
+        state: 'send',
 
       },
     ]

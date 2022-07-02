@@ -4,7 +4,6 @@ export default {
   template: `
     <section class='new-email'>
       <form class='email-form'>
-        <!-- <h1>hi</h1> -->
         <div>
           <h2>New Message</h2><button @click='close' class='close'>X</button>
         </div>    
@@ -19,7 +18,7 @@ export default {
         <div>
           <textarea v-model="newEmail.body" placeholder='enter some message...'></textarea>
         </div>
-        <button @click='send' >&#10148;</button>
+        <button @click='send' class='send'>&#10148;</button>
       </form>
     </section>
 
@@ -30,6 +29,7 @@ export default {
         to: null,
         subject: null,
         body: null,
+        isRead: false,
         sentAt: Date.now(),
         state: 'sent',
     },
