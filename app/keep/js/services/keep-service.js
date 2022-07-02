@@ -55,6 +55,7 @@ function save(note) {
 function getNextNoteId(noteId) {
   return storageService.query(NOTES_KEY).then((notes) => {
     const idx = notes.findIndex((note) => note.id === noteId)
+    console.log(idx)
     return idx < notes.length - 1 ? notes[idx + 1].id : notes[0].id
   })
 }
@@ -79,17 +80,6 @@ function _createNotes() {
       })
     )
     notes.push(_createNote('n104', 'note-video', { src: 'app/keep/videos/pexels-tima-miroshnichenko-5377684.mp4', title: 'hacker cracker' }))
-    // notes.push(_createNote('n105', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
-    // notes.push(_createNote('n106', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
-    // notes.push(_createNote('n107', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
-    // notes.push(_createNote('n108', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
-    // notes.push(_createNote('n109', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
-    // notes.push(_createNote('n110', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
-    // notes.push(_createNote('n111', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
-    // notes.push(_createNote('n112', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
-    // notes.push(_createNote('n113', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
-    // notes.push(_createNote('n114', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
-    // notes.push(_createNote('n115', 'note-video', { src: '/app/keep/img/Appsus.png', title: 'hacker cracker' }), 2)
     utilService.saveToStorage(NOTES_KEY, notes)
   }
   return notes

@@ -17,11 +17,10 @@ export default {
           <div class="modal-wrapper">
             <div class="modal-container">
               <component  :is="note.type" :note="note" ></component>
-              <button @click='nextnote'>next note</button>
-              <button @click="remove(pinnedNote.id)">X</button>
-              <button @click="duplicate(pinnedNote)">duplicate</button>
-              <button @click="tooglePinned(pinnedNote)">P</button>
-              <!-- <router-link :to="'/keep/' + nextnoteId">Next note</router-link> -->
+              <button @click="remove(note.id)">X</button>
+              <button @click="duplicate(note)">duplicate</button>
+              <button @click="tooglePinned(note)">P</button>
+              <router-link :to="'/keep/' + nextnoteId">Next note</router-link>
               <button @click='clickBack'>Back</button>
             </div>
           </div>
@@ -52,39 +51,28 @@ export default {
     keepService.get(id).then((note) => (this.note = note))
   },
   methods: {
+    tooglePinned(note) {
+      note.isPinned = !note.isPinned
+      keepService.save(note)
+      this.$router.push('/keep/')
+    },
+    remove(noteId) {
+      keepService.remove(noteId)
+      this.$router.push('/keep/')
+    },
+    duplicate(note) {
+      keepService.addDuplicatedKeep(note)
+      this.$router.push('/keep/')
+    },
     clickBack() {
       this.$router.back()
     },
-    nextnote() {
-      this.$router.push('/note/' + this.nextNoteId)
-    },
   },
-  computed: {
-    noteImgUrl() {
-      return `${this.note.thumbnail}`
-    },
-    reading() {
-      const pageCount = this.note.pageCount
-      if (pageCount > 500) return 'Long reading'
-      if (pageCount > 200) return ' Decent Reading'
-      if (pageCount < 100) return 'Light Reading'
-    },
-    noteStatus() {
-      const currYear = new Date().getFullYear()
-      const publishedDate = this.note.publishedDate
-      if (currYear - publishedDate < 1) return 'new!'
-      if (currYear - publishedDate > 10) return 'Veteran note'
-    },
-    priceColor() {
-      const notePrice = this.note.listPrice.amount
-      if (notePrice > 150) return 'color-red'
-      if (notePrice < 20) return 'color-green'
-    },
-  },
+  computed: {},
   watch: {
-    '$route.params.noteId': {
+    '$route.params.keepId': {
       handler() {
-        const id = this.$route.params.noteId
+        const id = this.$route.params.keepId
         if (!id) return
         keepService.get(id).then((note) => {
           this.note = note
