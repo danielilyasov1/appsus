@@ -9,7 +9,7 @@ export default {
    <section class="note-app">
     <keep-filter @filtered="filterNote" :notes="notes" v-if="notes"/>
     <keep-add class='google-note' />
-    <keep-list @removed="removeNote" @selected="selectNote" :notes="notesToDisplay" />
+    <keep-list @removed="removeNote" @selected="selectNote" @renderDuplicatedNote="renderNote" :notes="notesToDisplay" />
    </section>
 
 `,
@@ -53,6 +53,9 @@ export default {
     },
     selectNote(note) {
       this.selectedNote = note
+    },
+    renderNote(newNote) {
+      this.notes.splice(0, 0, newNote)
     },
     filterNote(filterBy) {
       this.filterBy = filterBy

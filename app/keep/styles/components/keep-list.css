@@ -1,0 +1,145 @@
+.modal-mask {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* grid unpinned */
+.grid {
+  margin-inline-start: 250px;
+  margin-inline-end: 50px;
+}
+
+/* ---- .grid-item unpinned---- */
+
+.grid-item {
+  width: 300px;
+  float: left;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.674);
+}
+.grid-item:hover {
+  box-shadow: 0 1px 5px rgba(128, 128, 128, 0.674);
+  transition: 0.1s;
+  /* make all the buttons visiable */
+}
+
+.grid-item:active {
+  cursor: move;
+  opacity: 0.9;
+  box-shadow: 0 1px 25px rgba(75, 75, 75, 0.674);
+  /* make  all the buttons dissapire*/
+}
+
+.grid-item.is-dragging,
+.grid-item.is-positioning-post-drag {
+  z-index: 2;
+}
+
+.keep-title {
+  font-size: 2rem;
+}
+.keep-text {
+  font-size: 1.5rem;
+}
+
+/* grid pinned */
+.grid-pinned {
+  margin-inline-start: 250px;
+  margin-inline-end: 50px;
+  margin-block-end: 100px;
+}
+
+.grid-pinned:empty {
+  display: none;
+}
+
+.grid:empty {
+  display: none;
+}
+
+.pinned-grid-name {
+  position: absolute;
+  top: 127.5px;
+  left: 260px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 0.6875rem;
+}
+
+.grid-name {
+  position: absolute;
+  top: 490px;
+  left: 260px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 0.6875rem;
+}
+
+/* ---- .grid-item pinned---- */
+
+.grid-pinned-item {
+  width: 300px;
+  float: left;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.674);
+}
+.grid-pinned-item:hover {
+  box-shadow: 0 1px 5px rgba(128, 128, 128, 0.674);
+  transition: 0.1s;
+  /* make all the buttons visiable */
+}
+
+.grid-pinned-item:active {
+  cursor: move;
+  opacity: 0.9;
+  box-shadow: 0 1px 25px rgba(75, 75, 75, 0.674);
+  /* make  all the buttons dissapire*/
+}
+
+.grid-pinned-item.is-dragging,
+.grid-pinned-item.is-positioning-post-drag {
+  z-index: 2;
+}
+
+.ggrid-pinned-item img {
+  width: 150px;
+  height: 150px;
+}
+
+.keep-title {
+  font-size: 2rem;
+}
+.keep-text {
+  font-size: 1.5rem;
+}
+
+.detailsK {
+  text-decoration: none;
+  text-transform: none;
+}

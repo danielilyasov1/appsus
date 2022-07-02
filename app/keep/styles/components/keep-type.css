@@ -1,3 +1,25 @@
-.note-background {
-  background-color: dark;
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
+.check {
+  text-decoration: line-through;
+}
+
+.todo {
+  text-decoration: none;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 220px;
+}
+
+.note img {
+  width: 100%;
+  height: 220px;
+}
+
+.writing-container {
+  padding: 10px;
 }
