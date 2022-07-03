@@ -8,5 +8,5 @@
 @import 'components/keep-type.css';
 @import 'components/keep.css';
 @import 'components/keep-details.css';
-/* MEDIA QUERIES */
+@import 'components/keep-add.css'; /* MEDIA QUERIES */
 /* @import 'mq/mq.css' */
