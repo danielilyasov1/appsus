@@ -25,6 +25,8 @@ export default {
       emails: null,
       selectedEmail: null,
       filterBy: null,
+      sortState: 'inbox',
+
     }
   },
   created() {
@@ -46,6 +48,18 @@ export default {
       const regex = new RegExp(this.filterBy.subject, "i")
       return this.emails.filter((email) => regex.test(email.subject))
     },
+  //   emailsToDisplay() {
+  //     if (!this.emails) return
+  //     if (this.filterBy) {
+  //         return this.emails.filter(email => email.to.includes(this.filterBy))
+  //     }
+  //     if (this.sortState === 'unread') {
+  //         return this.emails.filter(email => {
+  //             return (!email.isRead && email.state === 'inbox')
+  //         })
+  //     }
+  //     return this.emails.filter(email => email.state === this.sortState)
+  // },
   },
   unmounted() {},
 }

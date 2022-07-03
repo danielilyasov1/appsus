@@ -13,17 +13,38 @@
 .email-form{
   position: absolute;
   bottom: 0;
-  /* right: auto;
-  left: 50em;
-  margin-bottom: 10rem; */
+  right: auto;
+  left: 45em;
+  margin-bottom: 5rem;
+  width: 500px;
+  height: 300px;
   background-color: #97cae8;
   border: 2px solid rgb(171, 171, 171);
   background-color: rgb(200, 221, 230);
-
   float: right;
+  padding: 5px;
+}
+
+.email-form div{
+margin-bottom: 10px;
+}
+
+.delete,.close{
+  float: right;
+  margin-top: -2em;
 }
 
 .delete{
+  font-size: medium;
+  width: 90px;
+}
+textarea{
+  width: 480px;
+  height: 130px;
+}
+
+.close, .send{
+  font-size: larger;
+  width: 25px;
   float: right;
-  margin-top: -2em;
 }

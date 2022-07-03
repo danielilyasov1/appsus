@@ -1,5 +1,3 @@
-
-
 .flex {
   display: flex;
   justify-content: end;
@@ -10,9 +8,10 @@
 }
 
 .date-mail {
+  margin-top: 3px;
   position: absolute;
-  right: 0;
-  font-size:medium;
+  right: 3em;
+  font-size: medium;
   font-weight: bold;
 }
 
@@ -21,47 +20,50 @@
   width: 100%;
 }
 
-.email-preview-container-section {
+.e-preview-container-section {
   position: relative;
+
 }
 
 .email-preview-container {
   margin-top: 0;
+  min-height: 50px;
+  width: 90vw;
   border: 2px solid rgb(171, 171, 171);
   background-color: rgb(200, 221, 230);
 }
 
-.email-preview-container .name-email{
+.email-preview-container  .name-email{
   margin-right: 2em;
-  font-size:medium;
+  font-size: medium;
   font-weight: bold;
 }
 
-.email-preview-container .sub-email{
-  font-size:medium;
+
+.email-preview-container .sub-email {
+  font-size: medium;
   font-weight: bold;
 }
 
 .mail {
+  margin-left: 20px;
   margin-top: 0;
-  font-size: medium;
+  font-size: 25px;
   width: 70vw;
   display: block;
 }
 
 .text-body {
-  /* display: flex; */
-  /* margin-right: 10rem; */
-  /* justify-content: end; */
+ 
   padding: 0;
   height: 17.78px;
-  font-size: smaller;
+  font-size: 15px;
 }
 
 .img-user {
   display: none;
 }
 
-.read-mail{
+.read-mail {
   font-weight: normal;
 }
